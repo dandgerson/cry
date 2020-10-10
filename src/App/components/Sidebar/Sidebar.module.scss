@@ -1,3 +1,23 @@
 .root {
+  outline: 1px solid;
   color: goldenrod;
+}
+
+.icon {
+  path {
+    fill: goldenrod;
+  }
+}
+
+.option {
+  outline: 1px solid;
+  color: green;
+
+  text-transform: capitalize;
+
+  &_icon {
+    path {
+      fill : green;
+    }
+  }
 }
