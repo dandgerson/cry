@@ -35,15 +35,21 @@ const Sidebar = () => {
     )}
     >
       {/* Twitter Icon */}
-      <SVG
-        src={twitterIcon}
-        width={24}
-        height={24}
-        className={cl(
-          s.icon,
-          t.icon,
-        )}
-      />
+      <div className={cl(
+        s.cryIcon,
+        t.cryIcon,
+      )}>
+        <div className={cl(
+          s.cryIcon_content,
+          t.cryIcon_content,
+        )}>
+          <SVG
+            src={twitterIcon}
+            width={24}
+            height={24}
+          />
+        </div>
+      </div>
 
       {Object.entries(optionsMap).map(([option, icon]) => (
         <React.Fragment key={option}>

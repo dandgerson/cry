@@ -1,8 +1,14 @@
 @import 'src/styles/variables';
 
-.icon {
+.cryIcon {
   path {
     fill: $dark-font-color;
+  }
+
+  &:hover {
+    .cryIcon_content {
+      background-color: $dark-accent-color-15;
+    }
   }
 }
 
@@ -10,6 +16,23 @@
   &_icon {
     path {
       fill: $dark-font-color;
+    }
+  }
+
+  &:hover {
+    .option {
+      &_content {
+        background-color: $dark-accent-color-15;
+      }
+
+      &_icon {
+        path {
+          fill: $dark-accent-color;
+        }
+      }
+      &_text {
+        color: $dark-accent-color;
+      }
     }
   }
 }

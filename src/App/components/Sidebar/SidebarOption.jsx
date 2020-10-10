@@ -13,8 +13,18 @@ const SidebarOption = ({
     t.option,
   )}
   >
-    {renderIcon()}
-    {text}
+    <div className={cl(
+      s.option_content,
+      t.option_content,
+    )}>
+      {renderIcon()}
+      <div className={cl(
+        s.option_text,
+        t.option_text,
+      )}>
+        {text}
+      </div>
+    </div>
   </div>
 )
 

@@ -1,3 +1,5 @@
+$transition-props: 200ms linear;
+
 // [theme-prop-staff-alfa]
 $dark-bg-color: rgb(21, 32, 43);
 
@@ -6,3 +8,5 @@ $dark-font-color-10: rgba($dark-font-color, 0.1);
 
 $dark-accent-color: rgb(29, 161, 242);
 $dark-accent-color-10: rgba($dark-accent-color, 0.1);
+$dark-accent-color-15: rgba($dark-accent-color, 0.15);
+$dark-accent-color-25: rgba($dark-accent-color, 0.25);
