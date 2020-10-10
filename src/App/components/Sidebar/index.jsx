@@ -11,7 +11,10 @@ import bookmarksIcon from 'images/bookmarks-icon.svg'
 import listsIcon from 'images/lists-icon.svg'
 import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
+
 import s from './Sidebar.module.scss'
+import t from './dark-theme.module.scss'
+
 import SidebarOption from './SidebarOption'
 
 const Sidebar = () => {
@@ -31,8 +34,6 @@ const Sidebar = () => {
       s.root,
     )}
     >
-      <h2>Sidebar</h2>
-
       {/* Twitter Icon */}
       <SVG
         src={twitterIcon}
@@ -40,24 +41,27 @@ const Sidebar = () => {
         height={24}
         className={cl(
           s.icon,
+          t.icon,
         )}
       />
 
-      {Object.entries(optionsMap).map(([key, value]) => (
-        <React.Fragment key={key}>
+      {Object.entries(optionsMap).map(([option, icon]) => (
+        <React.Fragment key={option}>
           <SidebarOption
-            text={key}
+            text={option}
             renderIcon={() => (
               <SVG
-                src={value}
+                src={icon}
                 width={24}
                 height={24}
                 className={cl(
                   s.option_icon,
+                  t.option_icon,
                 )}
               />
             )}
             styleModule={s}
+            themeModule={t}
           />
         </React.Fragment>
       ))}

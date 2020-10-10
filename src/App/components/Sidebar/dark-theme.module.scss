@@ -1,0 +1,15 @@
+@import 'src/styles/variables';
+
+.icon {
+  path {
+    fill: $dark-font-color;
+  }
+}
+
+.option {
+  &_icon {
+    path {
+      fill: $dark-font-color;
+    }
+  }
+}
