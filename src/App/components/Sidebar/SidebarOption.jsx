@@ -7,20 +7,34 @@ const SidebarOption = ({
   themeModule: t,
   text,
   renderIcon,
+  isActive,
+  handleClick,
 }) => (
-  <div className={cl(
-    s.option,
-    t.option,
-  )}
+  <div
+    className={cl(
+      s.option,
+      t.option,
+      {
+        [t['option-active']]: isActive,
+        [t.hoverable]: !isActive,
+      },
+    )}
+    onClick={handleClick}
   >
     <div className={cl(
       s.option_content,
       t.option_content,
+      {
+        [t['option_content-active']]: isActive,
+      },
     )}>
       {renderIcon()}
       <div className={cl(
         s.option_text,
         t.option_text,
+        {
+          [t['option_text-active']]: isActive,
+        },
       )}>
         {text}
       </div>
@@ -33,6 +47,8 @@ SidebarOption.propTypes = {
   themeModule: PropTypes.shape({}).isRequired,
   renderIcon: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
 }
 
 export default SidebarOption

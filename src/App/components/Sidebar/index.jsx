@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cl from 'classnames'
 import SVG from 'react-inlinesvg'
 
@@ -18,6 +18,10 @@ import t from './dark-theme.module.scss'
 import SidebarOption from './SidebarOption'
 
 const Sidebar = () => {
+  const [activeOption, setActiveOption] = useState('')
+
+  console.log({ activeOption })
+
   const optionsMap = {
     home: homeIcon,
     explore: exploreIcon,
@@ -63,11 +67,16 @@ const Sidebar = () => {
                 className={cl(
                   s.option_icon,
                   t.option_icon,
+                  {
+                    [t['option_icon-active']]: activeOption === option,
+                  },
                 )}
               />
             )}
             styleModule={s}
             themeModule={t}
+            isActive={activeOption === option}
+            handleClick={() => setActiveOption(option)}
           />
         </React.Fragment>
       ))}

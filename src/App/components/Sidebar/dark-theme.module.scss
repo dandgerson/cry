@@ -17,8 +17,34 @@
     path {
       fill: $dark-font-color;
     }
+    
+    &-active {
+      path {
+        fill: $dark-accent-color;
+      }
+    }
   }
 
+  &_text {
+    &-active {
+      color: $dark-accent-color;
+    }
+  }
+
+  &_content {
+    &-active {
+      .option_content {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-active {
+    cursor: default;
+  }
+}
+
+.hoverable {
   &:hover {
     .option {
       &_content {
