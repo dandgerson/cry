@@ -27,7 +27,7 @@ module.exports = {
   rules: {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'always-multiline'],
-    'arrow-parens': ['as-needed', { 'requireForBlockBody': true }],
+    'arrow-parens': [2, 'as-needed', { 'requireForBlockBody': true }],
   },
   settings: {
     // 'import/resolver': 'webpack',

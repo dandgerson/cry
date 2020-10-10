@@ -6,16 +6,15 @@ const SidebarOption = ({
   styleModule: s,
   text,
   renderIcon,
-}) => {
-  return (
-    <div className={cl(
-      s.option,
-    )}>
-      {renderIcon()}
-      {text}
-    </div>
-  )
-}
+}) => (
+  <div className={cl(
+    s.option,
+  )}
+  >
+    {renderIcon()}
+    {text}
+  </div>
+)
 
 SidebarOption.propTypes = {
   styleModule: PropTypes.shape({}).isRequired,

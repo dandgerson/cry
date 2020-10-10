@@ -2,10 +2,6 @@ import React from 'react'
 import cl from 'classnames'
 import SVG from 'react-inlinesvg'
 
-import SidebarOption from './SidebarOption'
-
-import s from './Sidebar.module.scss'
-
 import twitterIcon from 'images/twitter-icon.svg'
 import homeIcon from 'images/home-icon.svg'
 import exploreIcon from 'images/explore-icon.svg'
@@ -15,6 +11,8 @@ import bookmarksIcon from 'images/bookmarks-icon.svg'
 import listsIcon from 'images/lists-icon.svg'
 import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
+import s from './Sidebar.module.scss'
+import SidebarOption from './SidebarOption'
 
 const Sidebar = () => {
   const optionsMap = {
@@ -31,7 +29,8 @@ const Sidebar = () => {
   return (
     <div className={cl(
       s.root,
-    )}>
+    )}
+    >
       <h2>Sidebar</h2>
 
       {/* Twitter Icon */}
