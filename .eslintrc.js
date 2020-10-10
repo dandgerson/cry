@@ -29,6 +29,7 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
   },
   settings: {
+    // 'import/resolver': 'webpack',
     'import/resolver': {
       node: {
         paths: ['./src'],
