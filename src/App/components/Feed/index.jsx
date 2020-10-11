@@ -55,7 +55,7 @@ const Feed = () => {
       <div data-feed-body>
         {/* Post */}
         <Post
-          avatar={avatar}
+          avatar={userData.avatar}
           displayName={userData.displayName}
           isVerified={userData.isVerified}
           username={userData.username}
