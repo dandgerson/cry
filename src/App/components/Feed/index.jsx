@@ -63,6 +63,69 @@ const Feed = () => {
           text={userData.text}
           image={userData.image}
         />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
+        <Post
+          avatar={userData.avatar}
+          displayName={userData.displayName}
+          isVerified={userData.isVerified}
+          username={userData.username}
+          timestamp={userData.timestamp}
+          text={userData.text}
+          image={userData.image}
+        />
       </div>
 
     </div>
