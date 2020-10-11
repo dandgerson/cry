@@ -4,6 +4,7 @@ import cl from 'classnames'
 import 'styles/themes/dark-theme.scss'
 
 import Sidebar from 'App/components/Sidebar'
+import Feed from 'App/components/Feed'
 
 import s from './App.module.scss'
 import t from './dark-theme.module.scss'
@@ -13,13 +14,17 @@ function App() {
     <div className={cl(
       s.root,
       t.root,
-    )}>
-      <h1>Cry</h1>
-
+    )}
+    >
       {/* Sidbar */}
-      <Sidebar />
+      <div className={cl(
+        'bordered-right',
+      )}>
+        <Sidebar />
+      </div>
 
       {/* Feed */}
+      <Feed />
 
       {/* Widgets */}
     </div>

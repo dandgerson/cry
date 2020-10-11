@@ -12,15 +12,14 @@ import listsIcon from 'images/lists-icon.svg'
 import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
 
+import TriggerIcon from 'App/components/TriggerIcon'
+import SidebarOption from './SidebarOption'
+
 import s from './Sidebar.module.scss'
 import t from './dark-theme.module.scss'
 
-import SidebarOption from './SidebarOption'
-
 const Sidebar = () => {
   const [activeOption, setActiveOption] = useState('')
-
-  console.log({ activeOption })
 
   const optionsMap = {
     home: homeIcon,
@@ -39,22 +38,19 @@ const Sidebar = () => {
     )}
     >
       {/* Twitter Icon */}
-      <div className={cl(
-        s.cryIcon,
-        t.cryIcon,
-      )}>
-        <div className={cl(
-          s.cryIcon_content,
+      <TriggerIcon
+        src={twitterIcon}
+        width={24}
+        height={24}
+        rootClasses={cl(
+          t.cryIcon,
+        )}
+        contentClasses={cl(
           t.cryIcon_content,
-        )}>
-          <SVG
-            src={twitterIcon}
-            width={24}
-            height={24}
-          />
-        </div>
-      </div>
+        )}
+      />
 
+      {/* Sidbar options */}
       {Object.entries(optionsMap).map(([option, icon]) => (
         <React.Fragment key={option}>
           <SidebarOption
@@ -82,6 +78,15 @@ const Sidebar = () => {
       ))}
 
       {/* Button -> Tweet */}
+      <div
+        className={cl(
+          s.cryButton,
+          t.cryButton,
+          t.hovarable,
+        )}
+      >
+        give a cry
+      </div>
     </div>
   )
 }

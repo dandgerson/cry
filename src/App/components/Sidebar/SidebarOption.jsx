@@ -27,7 +27,8 @@ const SidebarOption = ({
       {
         [t['option_content-active']]: isActive,
       },
-    )}>
+    )}
+    >
       {renderIcon()}
       <div className={cl(
         s.option_text,
@@ -35,7 +36,8 @@ const SidebarOption = ({
         {
           [t['option_text-active']]: isActive,
         },
-      )}>
+      )}
+      >
         {text}
       </div>
     </div>

@@ -1,0 +1,13 @@
+@import 'src/styles/variables';
+
+.root {
+  path {
+    fill: $dark-font-color;
+  }
+
+  &:hover {
+    .content {
+      background-color: $dark-accent-color-15;
+    }
+  }
+}

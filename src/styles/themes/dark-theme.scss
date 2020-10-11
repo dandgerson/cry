@@ -4,3 +4,20 @@ body {
   background-color: $dark-bg-color;
   color: $dark-font-color;
 }
+
+.bordered {
+  border: 1px solid $dark-font-color-10;
+
+  &-top {
+    border-top: 1px solid $dark-font-color-10;
+  }
+  &-left {
+    border-left: 1px solid $dark-font-color-10;
+  }
+  &-bottom {
+    border-bottom: 1px solid $dark-font-color-10;
+  }
+  &-right {
+    border-right: 1px solid $dark-font-color-10;
+  }
+}

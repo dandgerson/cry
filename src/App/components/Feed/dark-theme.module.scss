@@ -1,0 +1,9 @@
+@import 'src/styles/variables';
+
+.header {
+  &_icon {
+    path {
+      fill: $dark-accent-color;
+    }
+  }
+}

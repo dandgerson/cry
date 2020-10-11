@@ -1,0 +1,16 @@
+@import 'src/styles/variables';
+
+.root {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 8px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background $transition-props;
+}

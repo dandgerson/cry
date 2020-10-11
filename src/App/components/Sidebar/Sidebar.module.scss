@@ -12,35 +12,18 @@
   font-size: 19px;
 }
 
-.cryIcon_content, .option_content {
-  padding: 8px;
-}
-
-.cryIcon {
-  padding: 5px;
-  cursor: pointer;
-  
-  &_content {
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: background $transition-props;
-  }
-}
-
 .option {
   outline: 1px solid green;
   padding: 5px;
   
   text-transform: capitalize;
-
+  
   display: flex;
   align-items: center;
   cursor: pointer;
   
   &_content {
+    padding: 8px;
     display: flex;
     align-items: center;
     border-radius: 9999px;
@@ -59,4 +42,24 @@
 
     // transition: color $transition-props;
   }
+}
+
+.cryButton {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  
+  cursor: pointer;
+  outline-style: none;
+  border-radius: 9999px;
+
+  width: 100%;
+  min-width: 79px;
+  min-height: 49px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color $transition-props;
 }
