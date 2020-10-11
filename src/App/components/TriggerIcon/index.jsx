@@ -12,6 +12,7 @@ const TriggerIcon = ({
   height,
   rootClasses,
   contentClasses,
+  text,
 }) => (
   <div
     className={cl(
@@ -32,6 +33,8 @@ const TriggerIcon = ({
         width={width}
         height={height}
       />
+
+      {text}
     </div>
   </div>
 )
@@ -39,6 +42,7 @@ const TriggerIcon = ({
 TriggerIcon.defaultProps = {
   rootClasses: '',
   contentClasses: '',
+  text: '',
 }
 
 TriggerIcon.propTypes = {
@@ -53,6 +57,7 @@ TriggerIcon.propTypes = {
   ]).isRequired,
   rootClasses: PropTypes.string,
   contentClasses: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default TriggerIcon

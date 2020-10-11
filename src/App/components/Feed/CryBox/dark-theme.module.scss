@@ -1,2 +1,17 @@
 @import 'src/styles/variables';
 
+.root {
+  border-bottom: 10px solid $dark-font-color-10;
+}
+
+.input {
+  input {
+    color: $dark-font-color;
+  }
+}
+
+.controls_icon {
+  path, circle {
+    fill: $dark-accent-color;
+  }
+}

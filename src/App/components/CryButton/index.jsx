@@ -7,6 +7,7 @@ import t from './dark-theme.module.scss'
 
 const CryButton = ({
   fullWidth,
+  height,
 }) => (
   <div
     className={cl(
@@ -15,6 +16,7 @@ const CryButton = ({
     )}
     style={{
       width: fullWidth ? `calc(100% - ${Number.parseInt(s.sidePadding, 10) * 2}px)` : '',
+      height: height || '',
     }}
   >
     give a cry
@@ -23,10 +25,12 @@ const CryButton = ({
 
 CryButton.defaultProps = {
   fullWidth: false,
+  height: '',
 }
 
 CryButton.propTypes = {
   fullWidth: PropTypes.bool,
+  height: PropTypes.string,
 }
 
 export default CryButton

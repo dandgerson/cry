@@ -84,7 +84,7 @@ const Sidebar = () => {
         width: '100%',
       }}
       >
-        <CryButton fullWidth />
+        <CryButton fullWidth height='49px' />
       </div>
     </div>
   )

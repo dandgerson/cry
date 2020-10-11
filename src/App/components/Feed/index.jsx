@@ -1,6 +1,6 @@
 import React from 'react'
 import cl from 'classnames'
-import SVG from 'react-inlinesvg'
+// import SVG from 'react-inlinesvg'
 
 import starsIcon from 'images/stars-icon.svg'
 
@@ -34,6 +34,7 @@ const Feed = () => (
         )}
       />
     </div>
+
     {/* TweetBox */}
     <CryBox />
 

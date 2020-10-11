@@ -1,7 +1,47 @@
 .root {
-  outline: 1px solid skyblue;
+  // outline: 1px solid skyblue;
 
   padding: 5px 15px;
+  display: flex;
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0 0;
+  }
+}
+
+.avatarWrapper {
+  margin-right: 10px;
+}
+
+.input {
+  flex: 1 0 0;
+  padding: 10px 0;
+  outline: 1px solid firebrick;
+
+  input {
+    width: 100%;
+    font-size: 19px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    font-weight: 400;
+  }
+}
+
+.controls {
+  height: 49px;
+  display: flex;
+  align-items: center;
+
+  &_wrapper {
+    display: flex;
+    flex: 1 0 0;
+    margin-left: -13px;
+  }
 }
 
 

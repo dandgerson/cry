@@ -18,9 +18,6 @@ function App() {
     >
       {/* Sidbar */}
       <div
-        className={cl(
-          'bordered-right',
-        )}
         style={{
           flex: '0 0 275px',
           padding: '0 10px',
@@ -30,9 +27,30 @@ function App() {
       </div>
 
       {/* Feed */}
-      <Feed />
+      <div
+        className={cl(
+          'bordered-left',
+          'bordered-right',
+        )}
+        style={{
+          flex: '0 0 600px',
+        }}
+      >
+        <Feed />
+      </div>
 
       {/* Widgets */}
+      <div style={{
+        flex: '0 0 400px',
+        paddingLeft: '50px',
+        // outline: '1px solid tomato',
+      }}>
+        Widgets
+
+        <div>search</div>
+        <div>trends</div>
+        <div>who to follow</div>
+      </div>
     </div>
   )
 }
