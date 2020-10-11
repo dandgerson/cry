@@ -35,6 +35,7 @@ module.exports = {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'always-multiline'],
     'arrow-parens': [2, 'as-needed', { 'requireForBlockBody': true }],
+    'jsx-quotes': [2, 'prefer-single'],
   },
   settings: {
     // 'import/resolver': 'webpack',

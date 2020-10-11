@@ -13,6 +13,7 @@ import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
 
 import TriggerIcon from 'App/components/TriggerIcon'
+import CryButton from 'App/components/CryButton'
 import SidebarOption from './SidebarOption'
 
 import s from './Sidebar.module.scss'
@@ -78,14 +79,12 @@ const Sidebar = () => {
       ))}
 
       {/* Button -> Tweet */}
-      <div
-        className={cl(
-          s.cryButton,
-          t.cryButton,
-          t.hovarable,
-        )}
+      <div style={{
+        marginTop: '20px',
+        width: '100%',
+      }}
       >
-        give a cry
+        <CryButton fullWidth />
       </div>
     </div>
   )

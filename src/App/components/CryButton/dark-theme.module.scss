@@ -1,0 +1,10 @@
+@import 'src/styles/variables';
+
+.root {
+  color: $dark-font-color;
+  background-color: $dark-accent-color;
+
+  &:hover {
+    background-color: $dark-accent-color-85;
+  }
+}

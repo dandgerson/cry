@@ -1,0 +1,28 @@
+@import 'src/styles/variables';
+
+$side-padding: 15px;
+
+.root {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  
+  cursor: pointer;
+  outline-style: none;
+  border-radius: 9999px;
+
+  width: fit-content;
+  min-width: 79px;
+  min-height: 49px;
+  padding: 0 $side-padding;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color $transition-props;
+}
+
+:export {
+  sidePadding: $side-padding;
+}

@@ -4,12 +4,12 @@ import SVG from 'react-inlinesvg'
 
 import starsIcon from 'images/stars-icon.svg'
 
-import 'App/components/TriggerIcon'
+import TriggerIcon from 'App/components/TriggerIcon'
+
+import CryBox from './CryBox'
 
 import s from './Feed.module.scss'
 import t from './dark-theme.module.scss'
-
-import TriggerIcon from '../TriggerIcon'
 
 const Feed = () => (
   <div className={cl(
@@ -22,7 +22,8 @@ const Feed = () => (
       s.header,
       t.header,
       'bordered-bottom',
-    )}>
+    )}
+    >
       Home
       <TriggerIcon
         src={starsIcon}
@@ -34,15 +35,13 @@ const Feed = () => (
       />
     </div>
     {/* TweetBox */}
-    <div>
-      TweetBox
-    </div>
-
+    <CryBox />
 
     <div className={cl(
       s.body,
       t.body,
-    )}>
+    )}
+    >
       body
     </div>
     {/* Post */}
