@@ -20,7 +20,7 @@ import s from './Sidebar.module.scss'
 import t from './dark-theme.module.scss'
 
 const Sidebar = () => {
-  const [activeOption, setActiveOption] = useState('')
+  const [activeOption, setActiveOption] = useState('home')
 
   const optionsMap = {
     home: homeIcon,
@@ -84,7 +84,7 @@ const Sidebar = () => {
         width: '100%',
       }}
       >
-        <CryButton fullWidth height='49px' />
+        <CryButton isFullWidth height='49px' />
       </div>
     </div>
   )

@@ -12,13 +12,14 @@
 }
 
 .avatarWrapper {
+  padding-top: 5px;
   margin-right: 10px;
 }
 
 .input {
   flex: 1 0 0;
   padding: 10px 0;
-  outline: 1px solid firebrick;
+  // outline: 1px solid firebrick;
 
   input {
     width: 100%;
@@ -32,10 +33,24 @@
   }
 }
 
+.replySettings {
+  display: flex;
+  padding-bottom: 5px;
+
+  &_icon {
+    margin-left: -5px;
+
+    &Content {
+      padding: 5px;
+    }
+  }
+}
+
 .controls {
   height: 49px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
 
   &_wrapper {
     display: flex;

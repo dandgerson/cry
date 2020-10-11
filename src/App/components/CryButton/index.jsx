@@ -6,16 +6,22 @@ import s from './CryButton.module.scss'
 import t from './dark-theme.module.scss'
 
 const CryButton = ({
-  fullWidth,
+  isFullWidth,
   height,
+  isActive,
 }) => (
   <div
     className={cl(
       s.root,
       t.root,
+      {
+        [t.hoverable]: isActive,
+        [s.mute]: !isActive,
+        [t.mute]: !isActive,
+      },
     )}
     style={{
-      width: fullWidth ? `calc(100% - ${Number.parseInt(s.sidePadding, 10) * 2}px)` : '',
+      width: isFullWidth ? `calc(100% - ${Number.parseInt(s.sidePadding, 10) * 2}px)` : '',
       height: height || '',
     }}
   >
@@ -24,12 +30,14 @@ const CryButton = ({
 )
 
 CryButton.defaultProps = {
-  fullWidth: false,
+  isFullWidth: false,
+  isActive: true,
   height: '',
 }
 
 CryButton.propTypes = {
-  fullWidth: PropTypes.bool,
+  isFullWidth: PropTypes.bool,
+  isActive: PropTypes.bool,
   height: PropTypes.string,
 }
 

@@ -1,6 +1,8 @@
 @import 'src/styles/variables';
 
 .root {
+  color: $dark-accent-color;
+
   path {
     fill: $dark-font-color;
   }

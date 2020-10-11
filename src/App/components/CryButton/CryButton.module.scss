@@ -23,6 +23,10 @@ $side-padding: 15px;
   transition: background-color $transition-props;
 }
 
+.mute {
+  cursor: default;
+}
+
 :export {
   sidePadding: $side-padding;
 }

@@ -3,6 +3,7 @@
 .root {
   padding: 5px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .content {
@@ -13,4 +14,9 @@
   justify-content: center;
 
   transition: background $transition-props;
+}
+
+.text {
+  font-size: 13px;
+  font-weight: 700;
 }
