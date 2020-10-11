@@ -54,7 +54,8 @@ const CryBox = () => {
     >
       <div className={cl(
         s.avatarWrapper,
-      )}>
+      )}
+      >
         <Avatar
           src={avatar}
           size='49px'
@@ -80,7 +81,8 @@ const CryBox = () => {
             s.replySettings,
             t.replySettings,
             'bordered-bottom',
-          )}>
+          )}
+          >
             <TriggerIcon
               src={repliesMap[activeReply].icon}
               width={20}
@@ -100,10 +102,12 @@ const CryBox = () => {
         <div className={cl(
           s.controls,
           t.controls,
-        )}>
+        )}
+        >
           <div className={cl(
             s.controls_wrapper,
-          )}>
+          )}
+          >
             {Object.keys(controlsMap).map(control => (
               <React.Fragment key={control}>
                 <TriggerIcon

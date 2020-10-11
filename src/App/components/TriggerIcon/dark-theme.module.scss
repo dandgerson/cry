@@ -2,14 +2,20 @@
 
 .root {
   color: $dark-accent-color;
-
+  transition: color $transition-props;
+  
   path {
     fill: $dark-font-color;
+    transition: fill $transition-props;
   }
-
+  
   &:hover {
     .content {
       background-color: $dark-accent-color-15;
     }
   }
+}
+
+.content {
+  transition: background-color $transition-props;
 }

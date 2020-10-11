@@ -44,7 +44,8 @@ function App() {
         flex: '0 0 400px',
         paddingLeft: '50px',
         // outline: '1px solid tomato',
-      }}>
+      }}
+      >
         Widgets
 
         <div>search</div>

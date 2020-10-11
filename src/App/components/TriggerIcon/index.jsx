@@ -14,38 +14,39 @@ const TriggerIcon = ({
   contentClasses,
   text,
 }) => (
+  <div
+    className={cl(
+      s.root,
+      t.root,
+      ...rootClasses.split(' '),
+    )}
+  >
     <div
       className={cl(
-        s.root,
-        t.root,
-        ...rootClasses.split(' '),
+        s.content,
+        t.content,
+        ...contentClasses.split(' '),
       )}
     >
-      <div
-        className={cl(
-          s.content,
-          t.content,
-          ...contentClasses.split(' '),
-        )}
-      >
-        <SVG
-          src={src}
-          width={width}
-          height={height}
-          style={{
-            marginRight: text ? '0.5em' : '',
-          }}
-        />
+      <SVG
+        src={src}
+        width={width}
+        height={height}
+        style={{
+          marginRight: text ? '0.5em' : '',
+        }}
+      />
 
-        <div className={cl(
-          s.text,
-          t.text,
-        )}>
-          {text}
-        </div>
+      <div className={cl(
+        s.text,
+        t.text,
+      )}
+      >
+        {text}
       </div>
     </div>
-  )
+  </div>
+)
 
 TriggerIcon.defaultProps = {
   rootClasses: '',

@@ -1,0 +1,157 @@
+@import 'src/styles/variables';
+
+.root {
+  transition: background-color $transition-props;
+
+  &:hover {
+    background-color: $dark-font-color-025;
+  }
+}
+
+.verifiedIcon {
+  path {
+    fill: $dark-font-color;
+  }
+}
+
+.moreSimpleIcon {
+  path {
+    fill: $dark-font-color-50;
+
+    transition: fill $transition-props;
+  }
+
+  &:hover {
+    path {
+      fill: $dark-accent-color;
+    }
+  }
+}
+
+.image {
+  img {
+    border: 1px solid $dark-font-color-10;
+  }
+}
+
+.option {
+  &-comment {
+    &_root {
+      path {
+        fill: $dark-font-color-50;
+      }
+    }
+    
+    &_counter {
+      color: $dark-font-color-50;
+      transition: color $transition-props;
+    }
+  }
+  
+  &-repost {
+    &_root {
+      path {
+        fill: $dark-font-color-50;
+      }
+    }
+    
+    &_counter {
+      color: $dark-font-color-50;
+      transition: color $transition-props;
+    }
+  }
+  
+  &-like {
+    &_root {
+      path {
+        fill: $dark-font-color-50;
+      }
+    }
+    
+    &_counter {
+      color: $dark-font-color-50;
+      transition: color $transition-props;
+    }
+  }
+  
+  &-share {
+    &_root {
+      path {
+        fill: $dark-font-color-50;
+      }
+    }
+    
+    &_counter {
+      color: $dark-font-color-50;
+      transition: color $transition-props;
+    }
+  }
+
+  &:hover {
+    .option {
+      &-comment {
+        &_root {
+          path {
+            fill: $dark-accent-color;
+          }
+        }
+
+        &_content {
+          background-color: $dark-accent-color-15;
+        }
+
+        &_counter {
+          color: $dark-accent-color;
+        }
+      }
+
+      &-repost {
+        &_root {
+          path {
+            fill: $dark-green-color;
+          }
+        }
+
+        &_content {
+          background-color: $dark-green-color-15;
+        }
+
+        &_counter {
+          color: $dark-green-color;
+        }
+      }
+
+      &-like {
+        &_root {
+          path {
+            fill: $dark-red-color;
+          }
+        }
+
+        &_content {
+          background-color: $dark-red-color-15;
+        }
+
+        &_counter {
+          color: $dark-red-color;
+        }
+      }
+
+      &-share {
+        &_root {
+          path {
+            fill: $dark-accent-color;
+          }
+        }
+
+        &_content {
+          background-color: $dark-accent-color-15;
+        }
+
+        &_counter {
+          color: $dark-accent-color;
+        }
+      }
+    }
+  }
+}
