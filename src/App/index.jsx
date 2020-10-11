@@ -17,9 +17,15 @@ function App() {
     )}
     >
       {/* Sidbar */}
-      <div className={cl(
-        'bordered-right',
-      )}>
+      <div
+        className={cl(
+          'bordered-right',
+        )}
+        style={{
+          flex: '0 0 275px',
+          padding: '0 10px',
+        }}
+      >
         <Sidebar />
       </div>
 

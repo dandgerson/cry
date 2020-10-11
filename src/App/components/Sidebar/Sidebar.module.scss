@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
 .root {
-  outline: 1px solid goldenrod;
+  // outline: 1px solid goldenrod;
 
   display: flex;
   flex-flow: column nowrap;
@@ -10,10 +10,12 @@
   line-height: 1.3125;
   font-weight: 700;
   font-size: 19px;
+
+  height: 100vh;
 }
 
 .option {
-  outline: 1px solid green;
+  // outline: 1px solid green;
   padding: 5px;
   
   text-transform: capitalize;
@@ -45,6 +47,8 @@
 }
 
 .cryButton {
+  margin-top: 20px;
+
   font-size: 15px;
   font-weight: 700;
   text-transform: capitalize;

@@ -34,7 +34,17 @@ const Feed = () => (
       />
     </div>
     {/* TweetBox */}
+    <div>
+      TweetBox
+    </div>
 
+
+    <div className={cl(
+      s.body,
+      t.body,
+    )}>
+      body
+    </div>
     {/* Post */}
     {/* Post */}
     {/* Post */}
