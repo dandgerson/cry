@@ -52,136 +52,151 @@ const Post = ({
         'bordered-bottom',
       )}
     >
-      <div className={cl(
-        s.avatarWrapper,
-      )}
+      <div
+        data-content-wrapper
+        style={{
+          display: 'flex',
+        }}
       >
-        <Avatar
-          src={avatar}
-          size='49px'
-        />
-      </div>
-
-      <div>
         <div className={cl(
-          s.header,
-          t.header,
+          s.avatarWrapper,
         )}
         >
-          <div style={{
-            display: 'flex',
-          }}>
-            <div className={cl(
-              s.displayName,
-              t.displayName,
-            )}
-            >
-              {displayName}
-            </div>
-
-            {isVerified && (
-              <SVG
-                src={verifiedIcon}
-                width={19}
-                height={19}
-                className={cl(
-                  s.verifiedIcon,
-                  t.verifiedIcon,
-                )}
-              />
-            )}
-
-            <div className={cl(
-              s.username,
-              t.username,
-            )}
-            >
-              {`@${username}`}
-            </div>
-
-            <div className={cl(
-              s.dotSeparator,
-              t.dotSeparator,
-            )}
-            >
-              ·
-            </div>
-
-            <div className={cl(
-              s.timestamp,
-              t.timestamp,
-            )}
-            >
-              {timestamp}
-            </div>
-          </div>
-
-          <TriggerIcon
-            src={moreSimpleIcon}
-            width={19}
-            height={19}
-            rootClasses={cl(
-              t.moreSimpleIcon,
-            )}
+          <Avatar
+            src={avatar}
+            size='49px'
           />
         </div>
 
-        <div data-post-body>
+        <div data-header-wrapper>
           <div className={cl(
-            s.text,
-            t.text,
+            s.header,
+            t.header,
           )}
           >
-            {text}
-          </div>
-
-          <div className={cl(
-            s.image,
-            t.image,
-          )}
-          >
-            <img src={image} alt='post' />
-          </div>
-        </div>
-
-        <div className={cl(
-          s.footer,
-          t.footer,
-        )}>
-          {Object.keys(postOptions).map(option => (
-            <div
-              key={option}
-              className={cl(
-                s.option,
-                t.option,
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              position: 'relative',
+            }}>
+              <div className={cl(
+                s.displayName,
+                t.displayName,
               )}
-            >
-              <TriggerIcon
-                src={postOptions[option].icon}
-                width={19}
-                height={19}
-                rootClasses={cl(
-                  s[`option-${option}_root`],
-                  t[`option-${option}_root`],
-                )}
-                contentClasses={cl(
-                  s[`option-${option}_content`],
-                  t[`option-${option}_content`],
-                )}
-              />
+              >
+                {displayName}
+              </div>
 
-              {Boolean(postOptions[option].counter) && (
-                <div className={cl(
-                  s.counter,
-                  t[`option-${option}_counter`],
-                )}>
-                  {postOptions[option].counter}
-                </div>
+              {isVerified && (
+                <SVG
+                  src={verifiedIcon}
+                  width={19}
+                  height={19}
+                  className={cl(
+                    s.verifiedIcon,
+                    t.verifiedIcon,
+                  )}
+                />
               )}
+
+              <div className={cl(
+                s.username,
+                t.username,
+              )}
+              >
+                {`@${username}`}
+              </div>
+
+              <div className={cl(
+                s.dotSeparator,
+                t.dotSeparator,
+              )}
+              >
+                ·
+              </div>
+
+              <div className={cl(
+                s.timestamp,
+                t.timestamp,
+              )}
+              >
+                {timestamp}
+              </div>
+
+              <div style={{
+                position: 'absolute',
+                top: '-15px',
+                right: '0',
+              }}>
+                <TriggerIcon
+                  src={moreSimpleIcon}
+                  width={19}
+                  height={19}
+                  rootClasses={cl(
+                    t.moreSimpleIcon,
+                  )}
+                />
+              </div>
             </div>
-          ))}
-        </div>
 
+          </div>
+
+          <div data-post-body>
+            <div className={cl(
+              s.text,
+              t.text,
+            )}
+            >
+              {text}
+            </div>
+
+            <div className={cl(
+              s.image,
+              t.image,
+            )}
+            >
+              <img src={image} alt='post' />
+            </div>
+          </div>
+
+          <div className={cl(
+            s.footer,
+            t.footer,
+          )}>
+            {Object.keys(postOptions).map(option => (
+              <div
+                key={option}
+                className={cl(
+                  s.option,
+                  t.option,
+                )}
+              >
+                <TriggerIcon
+                  src={postOptions[option].icon}
+                  width={19}
+                  height={19}
+                  rootClasses={cl(
+                    s[`option-${option}_root`],
+                    t[`option-${option}_root`],
+                  )}
+                  contentClasses={cl(
+                    s[`option-${option}_content`],
+                    t[`option-${option}_content`],
+                  )}
+                />
+
+                {Boolean(postOptions[option].counter) && (
+                  <div className={cl(
+                    s.counter,
+                    t[`option-${option}_counter`],
+                  )}>
+                    {postOptions[option].counter}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

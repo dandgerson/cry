@@ -14,6 +14,12 @@
   }
 }
 
+.username,
+.dotSeparator,
+.timestamp {
+  color: $dark-font-color-50;
+}
+
 .moreSimpleIcon {
   path {
     fill: $dark-font-color-50;

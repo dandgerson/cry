@@ -1,17 +1,49 @@
 .root {
   display: flex;
-  padding: 0 15px;
+  flex-flow: column nowrap;
+  padding: 10px 15px 0;
 
   cursor: pointer;
 }
 
+.avatarWrapper {
+  margin-right: 10px;
+}
+
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.displayName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.verifiedIcon {
+  margin-left: 2px;
+}
+
+.username,
+.dotSeparator,
+.timestame {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.username {
+  margin-left: 5px;
+}
+
+.dotSeparator {
+  padding: 0 5px;
 }
 
 .image {
+  margin-top: 10px;
+
   img {
     width: 100%;
     border-radius: 15px;
