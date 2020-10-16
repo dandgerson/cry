@@ -22,6 +22,12 @@
   &-focused {
     background-color: transparent;
     border: 1px solid $dark-accent-color;
+
+    .icon_search {
+      path {
+        fill: $dark-accent-color;
+      }
+    }
   }
 
 }

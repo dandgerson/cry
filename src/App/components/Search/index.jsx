@@ -28,14 +28,11 @@ const Search = () => {
     >
       <SVG
         src={searchIcon}
-        width={22}
-        height={22}
+        width={20}
+        height={20}
         className={cl(
           s.icon_search,
           t.icon_search,
-          {
-            [t['icon_search-focused']]: isFocused,
-          },
         )}
       />
 
