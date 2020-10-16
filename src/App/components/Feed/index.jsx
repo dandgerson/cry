@@ -63,7 +63,7 @@ const Feed = () => {
               username={userData.username}
               timestamp={userData.timestamp}
               text={userData.text}
-              image='https://picsum.photos/500/300'
+              image={`https://picsum.photos/${500 + i * 10}/${300 + i * 10}`}
             />
           </React.Fragment>
         ))}

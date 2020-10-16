@@ -5,6 +5,7 @@ import 'styles/themes/dark-theme.scss'
 
 import Sidebar from 'App/components/Sidebar'
 import Feed from 'App/components/Feed'
+import Search from 'App/components/Search'
 
 import s from './App.module.scss'
 import t from './dark-theme.module.scss'
@@ -41,16 +42,14 @@ function App() {
 
       {/* Widgets */}
       <div style={{
-        flex: '0 0 400px',
-        paddingLeft: '50px',
+        flex: '0 0 350px',
+        paddingLeft: '30px',
+        paddingTop: '10px',
+        paddingRight: '10px',
         // outline: '1px solid tomato',
       }}
       >
-        Widgets
-
-        <div>search</div>
-        <div>trends</div>
-        <div>who to follow</div>
+        <Search />
       </div>
     </div>
   )
