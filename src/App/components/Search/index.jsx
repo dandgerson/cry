@@ -28,8 +28,8 @@ const Search = () => {
     >
       <SVG
         src={searchIcon}
-        width={18}
-        height={18}
+        width={22}
+        height={22}
         className={cl(
           s.icon_search,
           t.icon_search,
@@ -50,8 +50,8 @@ const Search = () => {
       {inputValue ? (
         <SVG
           src={crossIcon}
-          width={18}
-          height={18}
+          width={22}
+          height={22}
           className={cl(
             s.icon_cross,
             t.icon_cross,
