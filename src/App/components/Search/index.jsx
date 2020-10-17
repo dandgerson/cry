@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import PropTypes from 'prop-types'
 import SVG from 'react-inlinesvg'
 import cl from 'classnames'
 
@@ -61,10 +60,6 @@ const Search = () => {
       ) : null}
     </div>
   )
-}
-
-Search.propTypes = {
-
 }
 
 export default Search

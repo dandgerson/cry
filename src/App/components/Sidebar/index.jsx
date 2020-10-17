@@ -13,7 +13,7 @@ import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
 
 import TriggerIcon from 'App/components/TriggerIcon'
-import CryButton from 'App/components/CryButton'
+import Button from 'App/components/Button'
 import SidebarOption from './SidebarOption'
 
 import s from './Sidebar.module.scss'
@@ -84,7 +84,7 @@ const Sidebar = () => {
         width: '100%',
       }}
       >
-        <CryButton isFullWidth height='49px' />
+        <Button isFullWidth height='49px' />
       </div>
     </div>
   )

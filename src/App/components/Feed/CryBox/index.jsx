@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cl from 'classnames'
 
-import CryButton from 'App/components/CryButton'
+import Button from 'App/components/Button'
 import Avatar from 'App/components/Avatar'
 import TriggerIcon from 'App/components/TriggerIcon'
 
@@ -121,7 +121,7 @@ const CryBox = () => {
               </React.Fragment>
             ))}
           </div>
-          <CryButton
+          <Button
             isActive={Boolean(inputValue.length)}
           />
         </div>

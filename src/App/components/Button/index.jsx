@@ -2,10 +2,10 @@ import React from 'react'
 import cl from 'classnames'
 import PropTypes from 'prop-types'
 
-import s from './CryButton.module.scss'
+import s from './Button.module.scss'
 import t from './dark-theme.module.scss'
 
-const CryButton = ({
+const Button = ({
   isFullWidth,
   height,
   isActive,
@@ -29,16 +29,16 @@ const CryButton = ({
   </div>
 )
 
-CryButton.defaultProps = {
+Button.defaultProps = {
   isFullWidth: false,
   isActive: true,
   height: '',
 }
 
-CryButton.propTypes = {
+Button.propTypes = {
   isFullWidth: PropTypes.bool,
   isActive: PropTypes.bool,
   height: PropTypes.string,
 }
 
-export default CryButton
+export default Button

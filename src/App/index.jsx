@@ -6,6 +6,7 @@ import 'styles/themes/dark-theme.scss'
 import Sidebar from 'App/components/Sidebar'
 import Feed from 'App/components/Feed'
 import Search from 'App/components/Search'
+import WhoToFollow from 'App/components/WhoToFollow'
 
 import s from './App.module.scss'
 import t from './dark-theme.module.scss'
@@ -17,8 +18,8 @@ function App() {
       t.root,
     )}
     >
-      {/* Sidbar */}
       <div
+        data-sidebar
         style={{
           flex: '0 0 275px',
           padding: '0 10px',
@@ -27,8 +28,8 @@ function App() {
         <Sidebar />
       </div>
 
-      {/* Feed */}
       <div
+        data-feed
         className={cl(
           'bordered-left',
           'bordered-right',
@@ -40,16 +41,42 @@ function App() {
         <Feed />
       </div>
 
-      {/* Widgets */}
-      <div style={{
-        flex: '0 0 350px',
-        paddingLeft: '30px',
-        paddingTop: '10px',
-        paddingRight: '10px',
-        // outline: '1px solid tomato',
-      }}
+      <div
+        data-widgets
+        style={{
+          flex: '0 0 350px',
+          paddingLeft: '30px',
+          paddingTop: '10px',
+          paddingRight: '10px',
+        }}
       >
-        <Search />
+
+        <div
+          className={cl(
+            s.widget,
+            t.widget,
+          )}
+          style={{
+            position: 'relative',
+            height: '38px',
+          }}
+        >
+          <div style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+          }}>
+            <Search />
+          </div>
+        </div>
+
+        <div className={cl(
+          s.widget,
+          t.widget,
+        )}>
+          <WhoToFollow />
+        </div>
       </div>
     </div>
   )

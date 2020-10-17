@@ -1,0 +1,27 @@
+@import 'src/styles/variables';
+
+.root {
+  // border-radius: 15px;
+}
+
+.header {
+  padding: 10px 15px;
+  border-bottom: 1px solid;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.footer {
+  padding: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  cursor: pointer;
+  transition: background-color $transition-props;
+}
