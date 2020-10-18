@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cl from 'classnames'
 import SVG from 'react-inlinesvg'
+import { useHistory, useLocation } from 'react-router-dom'
+
+import { routes } from 'App/constants'
 
 import twitterIcon from 'images/twitter-icon.svg'
-import homeIcon from 'images/home-icon.svg'
-import exploreIcon from 'images/explore-icon.svg'
-import notificationsIcon from 'images/notifications-icon.svg'
-import messagesIcon from 'images/messages-icon.svg'
-import bookmarksIcon from 'images/bookmarks-icon.svg'
-import listsIcon from 'images/lists-icon.svg'
-import profileIcon from 'images/profile-icon.svg'
 import moreIcon from 'images/more-icon.svg'
 
 import TriggerIcon from 'App/components/TriggerIcon'
@@ -20,42 +16,38 @@ import s from './Sidebar.module.scss'
 import t from './dark-theme.module.scss'
 
 const Sidebar = () => {
-  const [activeOption, setActiveOption] = useState('home')
+  const location = useLocation()
+  const history = useHistory()
 
-  const optionsMap = {
-    home: homeIcon,
-    explore: exploreIcon,
-    notifications: notificationsIcon,
-    messages: messagesIcon,
-    bookmarks: bookmarksIcon,
-    lists: listsIcon,
-    profile: profileIcon,
-    more: moreIcon,
-  }
+  const activeOption = location.pathname.slice(1)
 
   return (
     <div className={cl(
       s.root,
     )}
     >
-      {/* Twitter Icon */}
-      <TriggerIcon
-        src={twitterIcon}
-        width={24}
-        height={24}
-        rootClasses={cl(
-          t.cryIcon,
-        )}
-        contentClasses={cl(
-          t.cryIcon_content,
-        )}
-      />
+      <div
+        onClick={() => history.push('/home')}
+      >
+        <TriggerIcon
+          src={twitterIcon}
+          width={24}
+          height={24}
+          rootClasses={cl(
+            t.cryIcon,
+          )}
+          contentClasses={cl(
+            t.cryIcon_content,
+          )}
+        />
+      </div>
 
       {/* Sidbar options */}
-      {Object.entries(optionsMap).map(([option, icon]) => (
-        <React.Fragment key={option}>
+      {Object.entries(routes).map(([route, { icon, path }]) => (
+        <React.Fragment key={route}>
           <SidebarOption
-            text={option}
+            text={route}
+            path={path}
             renderIcon={() => (
               <SVG
                 src={icon}
@@ -65,20 +57,41 @@ const Sidebar = () => {
                   s.option_icon,
                   t.option_icon,
                   {
-                    [t['option_icon-active']]: activeOption === option,
+                    [t['option_icon-active']]: activeOption === route,
                   },
                 )}
               />
             )}
             styleModule={s}
             themeModule={t}
-            isActive={activeOption === option}
-            handleClick={() => setActiveOption(option)}
+            isActive={activeOption === route}
           />
         </React.Fragment>
       ))}
 
-      {/* Button -> Tweet */}
+      <div>
+        <SidebarOption
+          text='more'
+          renderIcon={() => (
+            <SVG
+              src={moreIcon}
+              width={24}
+              height={24}
+              className={cl(
+                s.option_icon,
+                t.option_icon,
+                {
+                  [t['option_icon-active']]: false,
+                },
+              )}
+            />
+          )}
+          styleModule={s}
+          themeModule={t}
+          isActive={false}
+        />
+      </div>
+
       <div style={{
         marginTop: '20px',
         width: '100%',
