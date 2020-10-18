@@ -62,10 +62,7 @@ const Post = ({
           s.avatarWrapper,
         )}
         >
-          <Avatar
-            src={avatar}
-            size='49px'
-          />
+          <Avatar src={avatar} />
         </div>
 
         <div data-header-wrapper>

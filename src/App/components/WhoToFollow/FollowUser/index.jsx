@@ -21,10 +21,7 @@ const FollowUser = ({ avatar, displayName, username }) => {
         <div style={{
           marginRight: '10px',
         }}>
-          <Avatar
-            src={avatar}
-            size={49}
-          />
+          <Avatar src={avatar} />
         </div>
         <div className={cl(
           s.userMeta,

@@ -12,7 +12,7 @@ const Avatar = ({ src, size }) => (
       t.root,
     )}
     style={{
-      height: size || '',
+      height: size,
     }}
   >
     <img
@@ -23,7 +23,7 @@ const Avatar = ({ src, size }) => (
 )
 
 Avatar.defaultProps = {
-  size: '',
+  size: '49px',
 }
 
 Avatar.propTypes = {
