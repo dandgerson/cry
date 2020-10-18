@@ -6,17 +6,18 @@ import s from './Avatar.module.scss'
 import t from './dark-theme.module.scss'
 
 const Avatar = ({ src, size }) => (
-  <div className={cl(
-    s.root,
-    t.root,
-  )}
+  <div
+    className={cl(
+      s.root,
+      t.root,
+    )}
+    style={{
+      height: size || '',
+    }}
   >
     <img
       src={src}
       alt='user avatar'
-      style={{
-        height: size,
-      }}
     />
   </div>
 )
@@ -27,7 +28,10 @@ Avatar.defaultProps = {
 
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
-  size: PropTypes.string,
+  size: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 }
 
 export default Avatar

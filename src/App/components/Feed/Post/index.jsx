@@ -28,15 +28,15 @@ const Post = ({
   const postOptions = {
     comment: {
       icon: chatIcon,
-      counter: 6,
+      counter: Math.ceil(Math.random() * 100),
     },
     repost: {
       icon: repeatIcon,
-      counter: 2,
+      counter: Math.ceil(Math.random() * 100),
     },
     like: {
       icon: likeIcon,
-      counter: 14,
+      counter: Math.ceil(Math.random() * 100),
     },
     share: {
       icon: shareIcon,

@@ -1,3 +1,29 @@
 @import 'src/styles/variables';
 
-.root {}
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.userMeta {
+  .displayName {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .username {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  &:hover {
+    .displayName {
+      text-decoration: underline;
+    }
+  }
+}
+

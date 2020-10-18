@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import cl from 'classnames'
 
 import s from './WhoToFollow.module.scss'
@@ -10,9 +10,15 @@ import FollowUser from './FollowUser'
 const WhoToFollow = () => {
   const followUsers = [
     {
-      avatar: '',
-      displayName: '',
-    }
+      avatar: `https://picsum.photos/${200}`,
+      displayName: 'Lorem Ipsum',
+      username: '@loremipsum',
+    },
+    {
+      avatar: `https://picsum.photos/${300}`,
+      displayName: 'Dolor Sit',
+      username: '@dolorsit',
+    },
   ]
 
   return (
@@ -27,7 +33,17 @@ const WhoToFollow = () => {
         Who to follow
       </div>
 
-      <div data-body />
+      <div data-body>
+        {followUsers.map(user => (
+          <React.Fragment key={user.username}>
+            <FollowUser
+              avatar={user.avatar}
+              displayName={user.displayName}
+              username={user.username}
+            />
+          </React.Fragment>
+        ))}
+      </div>
 
       <div className={cl(
         s.footer,
