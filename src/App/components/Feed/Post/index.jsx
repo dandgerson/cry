@@ -24,19 +24,22 @@ const Post = ({
   text,
   image,
   avatar,
+  comments,
+  reposts,
+  likes,
 }) => {
   const postOptions = {
     comment: {
       icon: chatIcon,
-      counter: Math.ceil(Math.random() * 100),
+      counter: comments,
     },
     repost: {
       icon: repeatIcon,
-      counter: Math.ceil(Math.random() * 100),
+      counter: reposts,
     },
     like: {
       icon: likeIcon,
-      counter: Math.ceil(Math.random() * 100),
+      counter: likes,
     },
     share: {
       icon: shareIcon,
@@ -212,6 +215,9 @@ Post.propTypes = {
   text: PropTypes.string,
   image: PropTypes.string,
   avatar: PropTypes.string.isRequired,
+  comments: PropTypes.number.isRequired,
+  reposts: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 }
 
 export default Post
