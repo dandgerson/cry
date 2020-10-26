@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cl from 'classnames'
 import SVG from 'react-inlinesvg'
+import hexToRgba from 'hex-to-rgba'
 
 import verifiedIcon from 'images/verified-icon.svg'
 import moreSimpleIcon from 'images/more-simpled-icon.svg'
@@ -32,17 +33,24 @@ const Post = ({
     comment: {
       icon: chatIcon,
       counter: comments,
+      color: hexToRgba(t.darkFontColor, 0.5),
+      accentColor: t.darkAccentColor,
     },
     repost: {
       icon: repeatIcon,
       counter: reposts,
+      color: hexToRgba(t.darkFontColor, 0.5),
+      accentColor: t.darkGreenColor,
     },
     like: {
       icon: likeIcon,
       counter: likes,
+      accentColor: t.darkRedColor,
     },
     share: {
       icon: shareIcon,
+      color: hexToRgba(t.darkFontColor, 0.5),
+      accentColor: t.darkAccentColor,
       counter: 0,
     },
   }
@@ -175,14 +183,8 @@ const Post = ({
                   src={postOptions[option].icon}
                   width={19}
                   height={19}
-                  rootClasses={cl(
-                    s[`option-${option}_root`],
-                    t[`option-${option}_root`],
-                  )}
-                  contentClasses={cl(
-                    s[`option-${option}_content`],
-                    t[`option-${option}_content`],
-                  )}
+                  color={postOptions[option].color}
+                  accentColor={postOptions[option].accentColor}
                 />
 
                 {Boolean(postOptions[option].counter) && (

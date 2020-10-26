@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.2.1",
     "classnames": "^2.2.6",
     "firebase": "^7.24.0",
+    "hex-to-rgba": "^2.0.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

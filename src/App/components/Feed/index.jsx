@@ -40,9 +40,8 @@ const Feed = () => {
           src={starsIcon}
           width={24}
           height={24}
-          rootClasses={cl(
-            t.header_icon,
-          )}
+          color={t.darkAccentColor}
+          accentColor={t.darkAccentColor}
         />
       </div>
 

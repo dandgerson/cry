@@ -92,6 +92,8 @@ const CryBox = () => {
               contentClasses={cl(
                 s.replySettings_iconContent,
               )}
+              // color={t.accentColor}
+              // accentColor={t.accentColor}
             />
           </div>
         )}
@@ -111,9 +113,11 @@ const CryBox = () => {
                   src={controlsMap[control]}
                   width={24}
                   height={24}
-                  rootClasses={cl(
-                    t.controls_icon,
-                  )}
+                  // rootClasses={cl(
+                  //   t.controls_icon,
+                  // )}
+                  color={t.accentColor}
+                  accentColor={t.accentColor}
                 />
               </React.Fragment>
             ))}

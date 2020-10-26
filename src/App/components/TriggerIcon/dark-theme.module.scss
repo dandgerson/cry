@@ -5,15 +5,15 @@
   transition: color $transition-props;
   
   path {
-    fill: $dark-font-color;
+    // fill: $dark-font-color;
     transition: fill $transition-props;
   }
   
-  &:hover {
-    .content {
-      background-color: $dark-accent-color-15;
-    }
-  }
+  // &:hover {
+  //   .content {
+  //     background-color: $dark-accent-color-15;
+  //   }
+  // }
 }
 
 .content {

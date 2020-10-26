@@ -1,24 +1,32 @@
 $transition-props: 200ms;
 
 // [theme-prop-staff[-alfa]]
-$dark-bg-color: rgb(21, 32, 43);
+$dark-bg-color: #15202b;
 
-$dark-font-color: rgb(255, 255, 255);
+$dark-font-color: #ffffff;
 $dark-font-color-025: rgba($dark-font-color, 0.025);
 $dark-font-color-05: rgba($dark-font-color, 0.05);
 $dark-font-color-10: rgba($dark-font-color, 0.1);
 $dark-font-color-50: rgba($dark-font-color, 0.5);
 $dark-font-color-85: rgba($dark-font-color, 0.85);
 
-$dark-accent-color: rgb(29, 161, 242);
+$dark-accent-color: #1da0f2;
 $dark-accent-color-10: rgba($dark-accent-color, 0.1);
 $dark-accent-color-15: rgba($dark-accent-color, 0.15);
 $dark-accent-color-25: rgba($dark-accent-color, 0.25);
 $dark-accent-color-50: rgba($dark-accent-color, 0.5);
 $dark-accent-color-85: rgba($dark-accent-color, 0.85);
 
-$dark-green-color: rgb(25, 191, 98);
+$dark-green-color: #19bf61;
 $dark-green-color-15: rgba($dark-green-color, 0.15);
 
-$dark-red-color: rgb(224, 37, 93);
+$dark-red-color: #e0255d;
 $dark-red-color-15: rgba($dark-red-color, 0.15);
+
+:export {
+  darkBgColor: $dark-bg-color;
+  darkFontColor: $dark-font-color;
+  darkAccentColor: $dark-accent-color;
+  darkGreenColor: $dark-green-color;
+  darkRedColor: $dark-red-color;
+}

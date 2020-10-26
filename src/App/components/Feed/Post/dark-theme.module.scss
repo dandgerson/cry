@@ -42,11 +42,11 @@
 
 .option {
   &-comment {
-    &_root {
-      path {
-        fill: $dark-font-color-50;
-      }
-    }
+    // &_root {
+    //   path {
+    //     fill: $dark-font-color-50;
+    //   }
+    // }
     
     &_counter {
       color: $dark-font-color-50;
@@ -55,11 +55,11 @@
   }
   
   &-repost {
-    &_root {
-      path {
-        fill: $dark-font-color-50;
-      }
-    }
+    // &_root {
+    //   path {
+    //     fill: $dark-font-color-50;
+    //   }
+    // }
     
     &_counter {
       color: $dark-font-color-50;
@@ -68,11 +68,11 @@
   }
   
   &-like {
-    &_root {
-      path {
-        fill: $dark-font-color-50;
-      }
-    }
+    // &_root {
+    //   path {
+    //     fill: $dark-font-color-50;
+    //   }
+    // }
     
     &_counter {
       color: $dark-font-color-50;
@@ -81,11 +81,11 @@
   }
   
   &-share {
-    &_root {
-      path {
-        fill: $dark-font-color-50;
-      }
-    }
+    // &_root {
+    //   path {
+    //     fill: $dark-font-color-50;
+    //   }
+    // }
     
     &_counter {
       color: $dark-font-color-50;
@@ -96,15 +96,15 @@
   &:hover {
     .option {
       &-comment {
-        &_root {
-          path {
-            fill: $dark-accent-color;
-          }
-        }
+        // &_root {
+        //   path {
+        //     fill: $dark-accent-color;
+        //   }
+        // }
 
-        &_content {
-          background-color: $dark-accent-color-15;
-        }
+        // &_content {
+        //   background-color: $dark-accent-color-15;
+        // }
 
         &_counter {
           color: $dark-accent-color;
@@ -112,15 +112,15 @@
       }
 
       &-repost {
-        &_root {
-          path {
-            fill: $dark-green-color;
-          }
-        }
+        // &_root {
+        //   path {
+        //     fill: $dark-green-color;
+        //   }
+        // }
 
-        &_content {
-          background-color: $dark-green-color-15;
-        }
+        // &_content {
+        //   background-color: $dark-green-color-15;
+        // }
 
         &_counter {
           color: $dark-green-color;
@@ -128,15 +128,15 @@
       }
 
       &-like {
-        &_root {
-          path {
-            fill: $dark-red-color;
-          }
-        }
+        // &_root {
+        //   path {
+        //     fill: $dark-red-color;
+        //   }
+        // }
 
-        &_content {
-          background-color: $dark-red-color-15;
-        }
+        // &_content {
+        //   background-color: $dark-red-color-15;
+        // }
 
         &_counter {
           color: $dark-red-color;
@@ -144,15 +144,15 @@
       }
 
       &-share {
-        &_root {
-          path {
-            fill: $dark-accent-color;
-          }
-        }
+        // &_root {
+        //   path {
+        //     fill: $dark-accent-color;
+        //   }
+        // }
 
-        &_content {
-          background-color: $dark-accent-color-15;
-        }
+        // &_content {
+        //   background-color: $dark-accent-color-15;
+        // }
 
         &_counter {
           color: $dark-accent-color;
