@@ -12,7 +12,7 @@ import likeIcon from 'images/like-icon.svg'
 import shareIcon from 'images/share-icon.svg'
 
 import Avatar from 'App/components/Avatar'
-import TriggerIcon from 'App/components/TriggerIcon'
+import ActionIcon from 'App/components/ActionIcon'
 
 import s from './Post.module.scss'
 import t from './dark-theme.module.scss'
@@ -45,6 +45,7 @@ const Post = ({
     like: {
       icon: likeIcon,
       counter: likes,
+      color: hexToRgba(t.darkFontColor, 0.5),
       accentColor: t.darkRedColor,
     },
     share: {
@@ -136,13 +137,15 @@ const Post = ({
                 top: '-15px',
                 right: '0',
               }}>
-                <TriggerIcon
+                <ActionIcon
                   src={moreSimpleIcon}
                   width={19}
                   height={19}
-                  rootClasses={cl(
+                  rootClasses={[
                     t.moreSimpleIcon,
-                  )}
+                  ]}
+                  color={hexToRgba(t.darkFontColor, 0.5)}
+                  accentColor={t.darkAccentColor}
                 />
               </div>
             </div>
@@ -179,22 +182,15 @@ const Post = ({
                   t.option,
                 )}
               >
-                <TriggerIcon
+                <ActionIcon
                   src={postOptions[option].icon}
                   width={19}
                   height={19}
                   color={postOptions[option].color}
                   accentColor={postOptions[option].accentColor}
+                  outerText={postOptions[option].counter}
+                  rootClasses={[t[`option-${option}_root`]]}
                 />
-
-                {Boolean(postOptions[option].counter) && (
-                  <div className={cl(
-                    s.counter,
-                    t[`option-${option}_counter`],
-                  )}>
-                    {postOptions[option].counter}
-                  </div>
-                )}
               </div>
             ))}
           </div>

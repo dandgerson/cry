@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
 .root {
-  color: $dark-accent-color;
+  // color: $dark-accent-color;
   transition: color $transition-props;
   
   path {
@@ -16,6 +16,6 @@
   // }
 }
 
-.content {
+.area {
   transition: background-color $transition-props;
 }

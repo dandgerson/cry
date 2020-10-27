@@ -1,0 +1,33 @@
+@import 'src/styles/variables';
+
+.root {
+  padding: 5px;
+  cursor: pointer;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+}
+
+.area {
+  padding: 8px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  transition: color $transition-props;
+  
+  &-inner {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  &-outer {
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 2px;
+  }
+}

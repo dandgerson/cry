@@ -8,7 +8,7 @@ import { routes } from 'App/constants'
 import twitterIcon from 'images/twitter-icon.svg'
 import moreIcon from 'images/more-icon.svg'
 
-import TriggerIcon from 'App/components/TriggerIcon'
+import ActionIcon from 'App/components/ActionIcon'
 import Button from 'App/components/Button'
 import SidebarOption from './SidebarOption'
 
@@ -29,16 +29,13 @@ const Sidebar = () => {
       <div
         onClick={() => history.push('/home')}
       >
-        <TriggerIcon
+        <ActionIcon
           src={twitterIcon}
           width={24}
           height={24}
-          rootClasses={cl(
+          rootClasses={[
             t.cryIcon,
-          )}
-          contentClasses={cl(
-            t.cryIcon_content,
-          )}
+          ]}
         />
       </div>
 

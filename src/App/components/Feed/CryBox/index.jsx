@@ -3,7 +3,7 @@ import cl from 'classnames'
 
 import Button from 'App/components/Button'
 import Avatar from 'App/components/Avatar'
-import TriggerIcon from 'App/components/TriggerIcon'
+import ActionIcon from 'App/components/ActionIcon'
 
 import avatar from 'images/avatar.jpg'
 import pictureIcon from 'images/picture-icon.svg'
@@ -80,20 +80,20 @@ const CryBox = () => {
             'bordered-bottom',
           )}
           >
-            <TriggerIcon
+            <ActionIcon
               src={repliesMap[activeReply].icon}
               width={20}
               height={20}
-              text={repliesMap[activeReply].text}
-              rootClasses={cl(
+              innerText={repliesMap[activeReply].text}
+              rootClasses={[
                 s.replySettings_icon,
                 t.controls_icon,
-              )}
-              contentClasses={cl(
-                s.replySettings_iconContent,
-              )}
-              // color={t.accentColor}
-              // accentColor={t.accentColor}
+              ]}
+              contentClasses={[
+                s.replySettings_iconArea,
+              ]}
+              color={t.darkAccentColor}
+              accentColor={t.darkAccentColor}
             />
           </div>
         )}
@@ -109,15 +109,15 @@ const CryBox = () => {
           >
             {Object.keys(controlsMap).map(control => (
               <React.Fragment key={control}>
-                <TriggerIcon
+                <ActionIcon
                   src={controlsMap[control]}
                   width={24}
                   height={24}
-                  // rootClasses={cl(
-                  //   t.controls_icon,
-                  // )}
-                  color={t.accentColor}
-                  accentColor={t.accentColor}
+                  rootClasses={[
+                    t.controls_icon,
+                  ]}
+                  color={t.darkAccentColor}
+                  accentColor={t.darkAccentColor}
                 />
               </React.Fragment>
             ))}

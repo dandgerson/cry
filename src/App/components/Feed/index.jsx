@@ -7,7 +7,7 @@ import db from 'services/firebase'
 
 import starsIcon from 'images/stars-icon.svg'
 
-import TriggerIcon from 'App/components/TriggerIcon'
+import ActionIcon from 'App/components/ActionIcon'
 import CryBox from './CryBox'
 import Post from './Post'
 
@@ -36,12 +36,13 @@ const Feed = () => {
       >
         <div>Home</div>
 
-        <TriggerIcon
+        <ActionIcon
           src={starsIcon}
           width={24}
           height={24}
           color={t.darkAccentColor}
           accentColor={t.darkAccentColor}
+          rootClasses={[t.header_icon]}
         />
       </div>
 
