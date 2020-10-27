@@ -11,7 +11,10 @@
 }
 
 .controls_icon {
-  path, circle {
+  path {
     fill: $dark-accent-color;
+  }
+  circle {
+    stroke: $dark-accent-color;
   }
 }
