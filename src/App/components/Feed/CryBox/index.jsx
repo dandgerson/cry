@@ -66,7 +66,7 @@ const CryBox = () => {
         )}
         >
           <input
-            placeholder="What's happening?"
+            placeholder="What's happened?"
             type='text'
             onFocus={() => setIsFocused(true)}
             onChange={e => setInputValue(e.target.value)}
@@ -92,7 +92,6 @@ const CryBox = () => {
               contentClasses={[
                 s.replySettings_iconArea,
               ]}
-              color={t.darkAccentColor}
               accentColor={t.darkAccentColor}
             />
           </div>
@@ -116,7 +115,6 @@ const CryBox = () => {
                   rootClasses={[
                     t.controls_icon,
                   ]}
-                  color={t.darkAccentColor}
                   accentColor={t.darkAccentColor}
                 />
               </React.Fragment>
