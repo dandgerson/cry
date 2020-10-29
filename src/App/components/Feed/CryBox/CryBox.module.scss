@@ -16,21 +16,19 @@
   margin-right: 10px;
 }
 
-.input {
+.editor {
   flex: 1 0 0;
   padding: 10px 0;
   // outline: 1px solid firebrick;
 
-  input {
-    width: 100%;
-    font-size: 19px;
-    height: 24px;
-    background-color: transparent;
-    border: none;
-    outline: none;
+  width: 100%;
+  font-size: 19px;
+  // height: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 
-    font-weight: 400;
-  }
+  font-weight: 400;
 }
 
 .replySettings {

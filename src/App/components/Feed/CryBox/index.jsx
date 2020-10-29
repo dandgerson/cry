@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import cl from 'classnames'
-import { Editor, EditorState, ContentState } from 'draft-js'
+import {
+  Editor, EditorState, ContentState, Modifier,
+} from 'draft-js'
 
 import Button from 'App/components/Button'
 import Avatar from 'App/components/Avatar'
@@ -24,9 +26,7 @@ import t from './dark-theme.module.scss'
 const CryBox = () => {
   const [isFocused, setIsFocused] = useState(false)
   const [activeReply, setActiveReply] = useState('everyone')
-  const [editorState, setEditorState] = useState(() => EditorState.createWithContent(ContentState.createFromText('What\'s happened?')))
-
-  console.log({ editorState })
+  const [editorState, setEditorState] = useState(() => EditorState.createEmpty())
 
   const controlsMap = {
     addImage: pictureIcon,
@@ -74,6 +74,7 @@ const CryBox = () => {
             editorState={editorState}
             onChange={setEditorState}
             onFocus={() => setIsFocused(true)}
+            placeholder={'What\'s happened?'}
           />
         </div>
 
