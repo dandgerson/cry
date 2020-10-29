@@ -15,7 +15,7 @@ const ActionIcon = ({
   outerText,
   color,
   accentColor,
-  isTextColorPersist,
+  isColorPersist,
   rootClasses,
   areaClasses,
 }) => {
@@ -41,10 +41,11 @@ const ActionIcon = ({
         ...rootClasses,
       )}
       style={{
-        color: isHovered && !isTextColorPersist ? accentColor : color,
+        color: isHovered && !isColorPersist ? accentColor : color,
       }}
       onMouseEnter={() => {
         setIsHovered(true)
+        if (isColorPersist) return
         applyStyles({
           elem: svgRef.current,
           selector: 'path',
@@ -62,6 +63,7 @@ const ActionIcon = ({
       }}
       onMouseLeave={() => {
         setIsHovered(false)
+        if (isColorPersist) return
         applyStyles({
           elem: svgRef.current,
           selector: 'path',
@@ -136,7 +138,7 @@ ActionIcon.defaultProps = {
   areaClasses: [],
   innerText: '',
   outerText: '',
-  isTextColorPersist: false,
+  isColorPersist: false,
   color: '',
   accentColor: '',
 }
@@ -160,7 +162,7 @@ ActionIcon.propTypes = {
   ]),
   color: PropTypes.string,
   accentColor: PropTypes.string,
-  isTextColorPersist: PropTypes.bool,
+  isColorPersist: PropTypes.bool,
 }
 
 export default ActionIcon

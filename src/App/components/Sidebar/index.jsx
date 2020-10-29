@@ -36,6 +36,9 @@ const Sidebar = () => {
           rootClasses={[
             t.cryIcon,
           ]}
+          isColorPersist
+          color={t.darkFontColor}
+          accentColor={t.darkAccentColor}
         />
       </div>
 
