@@ -1,0 +1,67 @@
+@import 'src/styles/variables';
+
+.cryIcon {
+  path {
+    fill: $dark-font-color;
+  }
+}
+
+.option {
+  &_icon {
+    path {
+      fill: $dark-font-color;
+    }
+    
+    &-active {
+      path {
+        fill: $dark-accent-color;
+      }
+    }
+  }
+
+  &_text {
+    &-active {
+      color: $dark-accent-color;
+    }
+  }
+
+  &_content {
+    &-active {
+      .option_content {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-active {
+    cursor: default;
+  }
+}
+
+.hoverable {
+  &:hover {
+    .option {
+      &_content {
+        background-color: $dark-accent-color-15;
+      }
+
+      &_icon {
+        path {
+          fill: $dark-accent-color;
+        }
+      }
+      &_text {
+        color: $dark-accent-color;
+      }
+    }
+  }
+}
+
+.Button {
+  color: $dark-font-color;
+  background-color: $dark-accent-color;
+
+  &:hover {
+    background-color: $dark-accent-color-85;
+  }
+}

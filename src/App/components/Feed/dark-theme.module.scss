@@ -1,0 +1,11 @@
+@import 'src/styles/variables';
+
+.header {
+  background-color: $dark-bg-color;
+
+  &_icon {
+    path {
+      fill: $dark-accent-color;
+    }
+  }
+}
