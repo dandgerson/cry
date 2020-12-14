@@ -1,0 +1,47 @@
+@import 'src/styles/variables';
+
+.root {
+  background-color: $dark-font-color-05;
+
+  input {
+    background-color: transparent;
+    color: $dark-font-color;
+
+    &::placeholder {
+      color: $dark-font-color-50;
+      
+    }
+  }
+
+  .icon_search {
+    path {
+      fill: $dark-font-color-50;
+    }
+  }
+
+  &-focused {
+    background-color: transparent;
+    border: 1px solid $dark-accent-color;
+
+    .icon_search {
+      path {
+        fill: $dark-accent-color;
+      }
+    }
+  }
+
+}
+
+.icon_cross {
+  circle {
+    fill: $dark-accent-color;
+  }
+
+  // border: 0px solid black;
+
+  &:hover {
+    circle {
+      fill: $dark-accent-color-85;
+    }
+  }
+}

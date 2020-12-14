@@ -1,0 +1,36 @@
+.root {
+  // outline: 1px solid orchid;
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  overflow-y: scroll;
+  height: calc(100vh);
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.header {
+  position: sticky;
+  cursor: pointer;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 53px;
+  padding: 0 15px;
+
+  font-weight: 800;
+  font-size: 19px;
+
+  z-index: 100;
+}

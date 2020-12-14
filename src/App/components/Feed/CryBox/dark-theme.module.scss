@@ -1,0 +1,20 @@
+@import 'src/styles/variables';
+
+.root {
+  border-bottom: 10px solid $dark-font-color-05;
+}
+
+.editor {
+  color: $dark-font-color;
+}
+
+.controls_icon {
+  color: $dark-accent-color;
+
+  path {
+    fill: $dark-accent-color;
+  }
+  circle {
+    stroke: $dark-accent-color;
+  }
+}
