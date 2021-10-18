@@ -1,3 +1,15 @@
-# https://www.robotstxt.org/robotstxt.html
+User-agent: Googlebot
+Allow: /
+Sitemap: https://video.yourapi.ru/sitemap.xml
+
+User-agent: Yandex
+Allow: /
+Sitemap: https://video.yourapi.ru/sitemap.xml
+
+User-agent: Twitterbot
+Allow: /
+Sitemap: https://video.yourapi.ru/sitemap.xml
+
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://video.yourapi.ru/sitemap.xml
