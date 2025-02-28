@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../components/Header";
-import styled from "styled-components";
-import { MessageSquare } from "lucide-react";
+import React from 'react';
+import Header from '../components/Header';
+import styled from 'styled-components';
+import { MessageSquare } from 'lucide-react';
 
 const MessagesContainer = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const MessagesContainer = styled.div`
 
 const IconContainer = styled.div`
   margin-bottom: 20px;
-  background-color: #1d9bf0;
+  background-color: var(--primary-color);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -28,17 +28,18 @@ const Title = styled.h2`
   font-size: 31px;
   font-weight: 800;
   margin-bottom: 8px;
+  color: var(--text-color);
 `;
 
 const Subtitle = styled.p`
   font-size: 15px;
-  color: #536471;
+  color: var(--secondary-text-color);
   max-width: 380px;
   line-height: 1.3;
 `;
 
 const NewMessageButton = styled.button`
-  background-color: #1d9bf0;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 9999px;
@@ -50,7 +51,7 @@ const NewMessageButton = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #1a8cd8;
+    background-color: var(--primary-hover-color);
   }
 `;
 
@@ -58,15 +59,14 @@ const Messages: React.FC = () => {
   return (
     <>
       <Header title="Messages" />
-
+      
       <MessagesContainer>
         <IconContainer>
           <MessageSquare size={30} color="white" />
         </IconContainer>
         <Title>Welcome to your inbox!</Title>
         <Subtitle>
-          Drop a line, share posts and more with private conversations between
-          you and others on X.
+          Drop a line, share posts and more with private conversations between you and others on X.
         </Subtitle>
         <NewMessageButton>Write a message</NewMessageButton>
       </MessagesContainer>

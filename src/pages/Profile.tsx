@@ -1,11 +1,12 @@
-import React from "react";
-import Header from "../components/Header";
-import styled from "styled-components";
-import { Calendar, Link as LinkIcon, MapPin } from "lucide-react";
-import Avatar from "../components/Avatar";
-import Tweet from "../components/Tweet";
-import { currentUser } from "../data/mockData";
-import { tweets } from "../data/mockData";
+import React from 'react';
+import Header from '../components/Header';
+import styled from 'styled-components';
+import { Calendar, Link as LinkIcon, MapPin } from 'lucide-react';
+import Avatar from '../components/Avatar';
+import Tweet from '../components/Tweet';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
+import { useGetUserTweetsQuery } from '../store/api/apiSlice';
 
 const ProfileHeader = styled.div`
   position: relative;
@@ -13,28 +14,28 @@ const ProfileHeader = styled.div`
 
 const CoverPhoto = styled.div`
   height: 200px;
-  background-color: #1d9bf0;
+  background-color: var(--primary-color);
 `;
 
 const ProfileInfo = styled.div`
   padding: 12px 16px;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
 `;
 
 const ProfileAvatar = styled.div`
   position: absolute;
   top: 150px;
   left: 16px;
-  border: 4px solid white;
+  border: 4px solid var(--background-color);
   border-radius: 50%;
 `;
 
 const EditProfileButton = styled.button`
   float: right;
   margin-top: 12px;
-  background-color: white;
-  color: #0f1419;
-  border: 1px solid #cfd9de;
+  background-color: var(--profile-button-bg);
+  color: var(--text-color);
+  border: 1px solid var(--profile-button-border);
   border-radius: 9999px;
   padding: 8px 16px;
   font-weight: 700;
@@ -43,7 +44,7 @@ const EditProfileButton = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #e7e7e8;
+    background-color: var(--profile-button-hover);
   }
 `;
 
@@ -51,11 +52,12 @@ const ProfileName = styled.h2`
   font-size: 20px;
   font-weight: 800;
   margin: 60px 0 0 0;
+  color: var(--text-color);
 `;
 
 const ProfileUsername = styled.div`
   font-size: 15px;
-  color: #536471;
+  color: var(--secondary-text-color);
   margin-bottom: 12px;
 `;
 
@@ -63,12 +65,13 @@ const ProfileBio = styled.p`
   font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.3;
+  color: var(--text-color);
 `;
 
 const ProfileMetadata = styled.div`
   display: flex;
   gap: 12px;
-  color: #536471;
+  color: var(--secondary-text-color);
   font-size: 15px;
   margin-bottom: 12px;
 `;
@@ -87,95 +90,100 @@ const ProfileStats = styled.div`
 
 const ProfileStat = styled.div`
   font-size: 15px;
-
+  
   span {
     font-weight: 700;
-    color: #0f1419;
+    color: var(--text-color);
   }
-
-  color: #536471;
+  
+  color: var(--secondary-text-color);
 `;
 
 const TabsContainer = styled.div`
   display: flex;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
 `;
 
 const Tab = styled.div<{ active?: boolean }>`
   flex: 1;
   text-align: center;
   padding: 16px 0;
-  font-weight: ${(props) => (props.active ? "700" : "500")};
-  color: ${(props) => (props.active ? "#0f1419" : "#536471")};
+  font-weight: ${props => props.active ? '700' : '500'};
+  color: ${props => props.active ? 'var(--text-color)' : 'var(--secondary-text-color)'};
   position: relative;
   cursor: pointer;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: ${(props) => (props.active ? "56px" : "0")};
+    width: ${props => props.active ? '56px' : '0'};
     height: 4px;
-    background-color: #1d9bf0;
+    background-color: var(--primary-color);
     border-radius: 9999px;
   }
 `;
 
 const Profile: React.FC = () => {
-  const userTweets = tweets.filter((tweet) => tweet.user.id === currentUser.id);
-
+  const { user } = useSelector((state: RootState) => state.auth);
+  const { data: userTweets, isLoading } = useGetUserTweetsQuery(user?.id || '', { skip: !user });
+  
+  if (!user) {
+    return <div>Loading profile...</div>;
+  }
+  
   return (
     <>
-      <Header title={currentUser.name} />
-
+      <Header title={user.name} />
+      
       <ProfileHeader>
         <CoverPhoto />
         <ProfileAvatar>
-          <Avatar
-            src={currentUser.profileImageUrl}
-            alt={currentUser.name}
-            size={80}
-          />
+          <Avatar src={user.profileImageUrl} alt={user.name} size={80} />
         </ProfileAvatar>
       </ProfileHeader>
-
+      
       <ProfileInfo>
         <EditProfileButton>Edit profile</EditProfileButton>
-
-        <ProfileName>{currentUser.name}</ProfileName>
-        <ProfileUsername>@{currentUser.username}</ProfileUsername>
-
-        <ProfileBio>{currentUser.bio}</ProfileBio>
-
+        
+        <ProfileName>{user.name}</ProfileName>
+        <ProfileUsername>@{user.username}</ProfileUsername>
+        
+        <ProfileBio>{user.bio}</ProfileBio>
+        
         <ProfileMetadata>
           <ProfileMetadataItem>
             <Calendar size={18} />
-            <span>Joined {currentUser.joinedDate}</span>
+            <span>Joined {user.joinedDate}</span>
           </ProfileMetadataItem>
         </ProfileMetadata>
-
+        
         <ProfileStats>
           <ProfileStat>
-            <span>{currentUser.following}</span> Following
+            <span>{user.following}</span> Following
           </ProfileStat>
           <ProfileStat>
-            <span>{currentUser.followers}</span> Followers
+            <span>{user.followers}</span> Followers
           </ProfileStat>
         </ProfileStats>
       </ProfileInfo>
-
+      
       <TabsContainer>
         <Tab active={true}>Tweets</Tab>
         <Tab active={false}>Replies</Tab>
         <Tab active={false}>Media</Tab>
         <Tab active={false}>Likes</Tab>
       </TabsContainer>
-
-      {userTweets.map((tweet) => (
-        <Tweet key={tweet.id} tweet={tweet} />
-      ))}
+      
+      {isLoading ? (
+        <div style={{ padding: '20px', textAlign: 'center' }}>Loading tweets...</div>
+      ) : userTweets && userTweets.length > 0 ? (
+        userTweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
+      ) : (
+        <div style={{ padding: '20px', textAlign: 'center' }}>No tweets yet.</div>
+      )}
     </>
   );
 };

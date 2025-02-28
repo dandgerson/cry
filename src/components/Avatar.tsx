@@ -1,6 +1,6 @@
-import React from "react";
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import styled from "styled-components";
+import React from 'react';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
+import styled from 'styled-components';
 
 const AvatarRoot = styled(AvatarPrimitive.Root)`
   display: inline-flex;
@@ -25,8 +25,8 @@ const AvatarFallback = styled(AvatarPrimitive.Fallback)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eff3f4;
-  color: #536471;
+  background-color: var(--secondary-background);
+  color: var(--secondary-text-color);
   font-size: 15px;
   font-weight: 500;
 `;
@@ -40,9 +40,9 @@ interface AvatarProps {
 const Avatar: React.FC<AvatarProps> = ({ src, alt, size = 40 }) => {
   const getInitials = (name: string) => {
     return name
-      .split(" ")
-      .map((part) => part[0])
-      .join("")
+      .split(' ')
+      .map(part => part[0])
+      .join('')
       .toUpperCase();
   };
 

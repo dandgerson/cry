@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "../components/Header";
-import styled from "styled-components";
+import React from 'react';
+import Header from '../components/Header';
+import styled from 'styled-components';
 
 const NotificationsContainer = styled.div`
   display: flex;
@@ -15,11 +15,12 @@ const Title = styled.h2`
   font-size: 31px;
   font-weight: 800;
   margin-bottom: 8px;
+  color: var(--text-color);
 `;
 
 const Subtitle = styled.p`
   font-size: 15px;
-  color: #536471;
+  color: var(--secondary-text-color);
   max-width: 380px;
   line-height: 1.3;
 `;
@@ -28,12 +29,11 @@ const Notifications: React.FC = () => {
   return (
     <>
       <Header title="Notifications" />
-
+      
       <NotificationsContainer>
         <Title>Nothing to see here — yet</Title>
         <Subtitle>
-          From likes to reposts and a whole lot more, this is where all the
-          action happens.
+          From likes to reposts and a whole lot more, this is where all the action happens.
         </Subtitle>
       </NotificationsContainer>
     </>

@@ -1,5 +1,5 @@
-import React from "react";
-import { HeaderContainer, HeaderTitle } from "./styled";
+import React from 'react';
+import { HeaderContainer, HeaderTitle } from './styled';
 
 interface HeaderProps {
   title: string;

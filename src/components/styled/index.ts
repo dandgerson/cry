@@ -1,17 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   display: flex;
   min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
-  color: #0f1419;
+  color: var(--text-color);
+  background-color: var(--background-color);
 `;
 
 export const MainSection = styled.main`
   flex: 1;
-  border-left: 1px solid #eff3f4;
-  border-right: 1px solid #eff3f4;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   max-width: 600px;
 `;
 
@@ -52,13 +53,14 @@ export const NavItem = styled.div<{ active?: boolean }>`
   padding: 12px;
   border-radius: 9999px;
   font-size: 20px;
-  font-weight: ${(props) => (props.active ? "700" : "400")};
+  font-weight: ${props => props.active ? '700' : '400'};
   margin-bottom: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: var(--text-color);
 
   &:hover {
-    background-color: rgba(15, 20, 25, 0.1);
+    background-color: var(--sidebar-hover-color);
   }
 
   svg {
@@ -67,11 +69,11 @@ export const NavItem = styled.div<{ active?: boolean }>`
 
   @media (max-width: 1024px) {
     justify-content: center;
-
+    
     svg {
       margin-right: 0;
     }
-
+    
     span {
       display: none;
     }
@@ -79,8 +81,8 @@ export const NavItem = styled.div<{ active?: boolean }>`
 `;
 
 export const TweetButton = styled.button`
-  background-color: #1d9bf0;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--button-text);
   border: none;
   border-radius: 9999px;
   padding: 16px 0;
@@ -92,7 +94,7 @@ export const TweetButton = styled.button`
   margin-top: 16px;
 
   &:hover {
-    background-color: #1a8cd8;
+    background-color: var(--primary-hover-color);
   }
 
   @media (max-width: 1024px) {
@@ -103,7 +105,7 @@ export const TweetButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     span {
       display: none;
     }
@@ -117,17 +119,18 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchInput = styled.input`
-  background-color: #eff3f4;
+  background-color: var(--secondary-background);
   border: none;
   border-radius: 9999px;
   padding: 12px 40px;
   font-size: 15px;
   width: 100%;
   outline: none;
+  color: var(--text-color);
 
   &:focus {
-    background-color: white;
-    border: 1px solid #1d9bf0;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
   }
 `;
 
@@ -136,11 +139,11 @@ export const SearchIcon = styled.div`
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #536471;
+  color: var(--secondary-text-color);
 `;
 
 export const TrendsContainer = styled.div`
-  background-color: #f7f9f9;
+  background-color: var(--secondary-background);
   border-radius: 16px;
   margin-bottom: 16px;
 `;
@@ -149,17 +152,18 @@ export const TrendsHeader = styled.div`
   padding: 12px 16px;
   font-size: 20px;
   font-weight: 800;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
 `;
 
 export const TrendItem = styled.div`
   padding: 12px 16px;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--hover-color);
   }
 
   &:last-child {
@@ -169,22 +173,23 @@ export const TrendItem = styled.div`
 
 export const TrendCategory = styled.div`
   font-size: 13px;
-  color: #536471;
+  color: var(--secondary-text-color);
 `;
 
 export const TrendName = styled.div`
   font-size: 15px;
   font-weight: 700;
   margin: 2px 0;
+  color: var(--text-color);
 `;
 
 export const TrendTweets = styled.div`
   font-size: 13px;
-  color: #536471;
+  color: var(--secondary-text-color);
 `;
 
 export const SuggestedUsersContainer = styled.div`
-  background-color: #f7f9f9;
+  background-color: var(--secondary-background);
   border-radius: 16px;
   margin-bottom: 16px;
 `;
@@ -193,12 +198,12 @@ export const SuggestedUserItem = styled.div`
   padding: 12px 16px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--hover-color);
   }
 
   &:last-child {
@@ -214,16 +219,17 @@ export const UserInfo = styled.div`
 export const UserName = styled.div`
   font-weight: 700;
   font-size: 15px;
+  color: var(--text-color);
 `;
 
 export const UserUsername = styled.div`
-  color: #536471;
+  color: var(--secondary-text-color);
   font-size: 14px;
 `;
 
 export const FollowButton = styled.button`
-  background-color: #0f1419;
-  color: white;
+  background-color: var(--text-color);
+  color: var(--background-color);
   border: none;
   border-radius: 9999px;
   padding: 6px 16px;
@@ -233,52 +239,53 @@ export const FollowButton = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #272c30;
+    opacity: 0.9;
   }
 `;
 
 export const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--header-background);
   backdrop-filter: blur(12px);
   z-index: 10;
   padding: 0 16px;
   height: 53px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
 `;
 
 export const HeaderTitle = styled.h2`
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+  color: var(--text-color);
 `;
 
 export const TabsContainer = styled.div`
   display: flex;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
 `;
 
 export const Tab = styled.div<{ active?: boolean }>`
   flex: 1;
   text-align: center;
   padding: 16px 0;
-  font-weight: ${(props) => (props.active ? "700" : "500")};
-  color: ${(props) => (props.active ? "#0f1419" : "#536471")};
+  font-weight: ${props => props.active ? '700' : '500'};
+  color: ${props => props.active ? 'var(--text-color)' : 'var(--secondary-text-color)'};
   position: relative;
   cursor: pointer;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: ${(props) => (props.active ? "56px" : "0")};
+    width: ${props => props.active ? '56px' : '0'};
     height: 4px;
-    background-color: #1d9bf0;
+    background-color: var(--primary-color);
     border-radius: 9999px;
   }
 `;
@@ -286,7 +293,8 @@ export const Tab = styled.div<{ active?: boolean }>`
 export const TweetComposerContainer = styled.div`
   padding: 16px;
   display: flex;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--compose-background);
 `;
 
 export const ComposerAvatar = styled.div`
@@ -306,9 +314,11 @@ export const ComposerTextarea = styled.textarea`
   margin-bottom: 12px;
   outline: none;
   min-height: 52px;
+  background-color: transparent;
+  color: var(--text-color);
 
   &::placeholder {
-    color: #536471;
+    color: var(--secondary-text-color);
   }
 `;
 
@@ -321,34 +331,34 @@ export const ComposerActions = styled.div`
 export const ComposerTools = styled.div`
   display: flex;
   gap: 8px;
-  color: #1d9bf0;
+  color: var(--primary-color);
 `;
 
 export const PostButton = styled.button<{ disabled?: boolean }>`
-  background-color: ${(props) => (props.disabled ? "#8ecdf7" : "#1d9bf0")};
-  color: white;
+  background-color: ${props => props.disabled ? 'var(--disabled-button-bg)' : 'var(--primary-color)'};
+  color: var(--button-text);
   border: none;
   border-radius: 9999px;
   padding: 8px 16px;
   font-weight: 700;
   font-size: 15px;
-  cursor: ${(props) => (props.disabled ? "default" : "pointer")};
+  cursor: ${props => props.disabled ? 'default' : 'pointer'};
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${(props) => (props.disabled ? "#8ecdf7" : "#1a8cd8")};
+    background-color: ${props => props.disabled ? 'var(--disabled-button-bg)' : 'var(--primary-hover-color)'};
   }
 `;
 
 export const TweetContainer = styled.div`
   padding: 12px 16px;
   display: flex;
-  border-bottom: 1px solid #eff3f4;
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--hover-color);
   }
 `;
 
@@ -369,17 +379,18 @@ export const TweetHeader = styled.div`
 export const TweetAuthor = styled.span`
   font-weight: 700;
   margin-right: 4px;
+  color: var(--text-color);
 `;
 
 export const TweetUsername = styled.span`
-  color: #536471;
+  color: var(--secondary-text-color);
   margin-right: 4px;
 `;
 
 export const TweetTime = styled.span`
-  color: #536471;
+  color: var(--secondary-text-color);
   &::before {
-    content: "·";
+    content: '·';
     margin: 0 4px;
   }
 `;
@@ -389,13 +400,14 @@ export const TweetText = styled.p`
   font-size: 15px;
   line-height: 1.3125;
   overflow-wrap: break-word;
+  color: var(--text-color);
 `;
 
 export const TweetImage = styled.img`
   width: 100%;
   border-radius: 16px;
   margin-bottom: 12px;
-  border: 1px solid #eff3f4;
+  border: 1px solid var(--border-color);
 `;
 
 export const TweetActions = styled.div`
@@ -408,7 +420,7 @@ export const TweetActions = styled.div`
 export const TweetActionButton = styled.div`
   display: flex;
   align-items: center;
-  color: #536471;
+  color: var(--secondary-text-color);
   font-size: 13px;
 
   svg {
@@ -416,7 +428,7 @@ export const TweetActionButton = styled.div`
   }
 
   &:hover {
-    color: #1d9bf0;
+    color: var(--primary-color);
   }
 `;
 
@@ -426,8 +438,8 @@ export const BottomNavigation = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: white;
-  border-top: 1px solid #eff3f4;
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
   padding: 8px 0;
   z-index: 100;
 
@@ -441,6 +453,6 @@ export const BottomNavItem = styled.div<{ active?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${(props) => (props.active ? "#1d9bf0" : "#536471")};
+  color: ${props => props.active ? 'var(--primary-color)' : 'var(--secondary-text-color)'};
   font-size: 10px;
 `;

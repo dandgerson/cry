@@ -1,0 +1,264 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "username": "johndoe",
+      "profileImageUrl": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "Software developer | React enthusiast | Coffee lover",
+      "following": 234,
+      "followers": 567,
+      "joinedDate": "January 2020"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "username": "janesmith",
+      "profileImageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "UX Designer | Travel enthusiast",
+      "following": 345,
+      "followers": 1234,
+      "joinedDate": "March 2019"
+    },
+    {
+      "id": "3",
+      "name": "Alex Johnson",
+      "username": "alexj",
+      "profileImageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "Product Manager | Tech enthusiast",
+      "following": 567,
+      "followers": 890,
+      "joinedDate": "June 2021"
+    },
+    {
+      "id": "4",
+      "name": "Sarah Williams",
+      "username": "sarahw",
+      "profileImageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "Digital Marketer | Photography lover",
+      "following": 234,
+      "followers": 567,
+      "joinedDate": "April 2022"
+    },
+    {
+      "id": "5",
+      "name": "Mike Brown",
+      "username": "mikeb",
+      "profileImageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "Software Engineer | Gamer | Music lover",
+      "following": 345,
+      "followers": 789,
+      "joinedDate": "May 2021"
+    },
+    {
+      "id": "6",
+      "name": "Emily Davis",
+      "username": "emilyd",
+      "profileImageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      "bio": "Content Creator | Travel blogger",
+      "following": 456,
+      "followers": 890,
+      "joinedDate": "January 2023"
+    }
+  ],
+  "tweets": [
+    {
+      "id": "1",
+      "content": "Just launched my new website! Check it out at example.com #webdev #react",
+      "userId": "2",
+      "createdAt": "2023-07-15T14:30:00Z",
+      "likes": 45,
+      "retweets": 12,
+      "replies": 8,
+      "views": 1234
+    },
+    {
+      "id": "2",
+      "content": "React 18 has some amazing new features. Loving the new concurrent rendering capabilities!",
+      "userId": "1",
+      "createdAt": "2023-07-15T12:30:00Z",
+      "likes": 89,
+      "retweets": 23,
+      "replies": 14,
+      "views": 2345
+    },
+    {
+      "id": "3",
+      "content": "Beautiful sunset today! 🌅",
+      "userId": "3",
+      "createdAt": "2023-07-15T09:30:00Z",
+      "likes": 123,
+      "retweets": 34,
+      "replies": 12,
+      "views": 3456,
+      "images": [
+        "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "4",
+      "content": "Just finished reading \"Atomic Habits\" by James Clear. Highly recommend it to everyone!",
+      "userId": "2",
+      "createdAt": "2023-07-15T06:30:00Z",
+      "likes": 67,
+      "retweets": 15,
+      "replies": 9,
+      "views": 1876
+    },
+    {
+      "id": "5",
+      "content": "Working on a new project using TypeScript and React. The type safety is amazing!",
+      "userId": "1",
+      "createdAt": "2023-07-14T14:30:00Z",
+      "likes": 56,
+      "retweets": 14,
+      "replies": 7,
+      "views": 1543
+    },
+    {
+      "id": "6",
+      "content": "Just got back from an amazing trip to Japan! The food, culture, and people were incredible. Can't wait to go back! 🇯🇵",
+      "userId": "4",
+      "createdAt": "2023-07-14T10:15:00Z",
+      "likes": 112,
+      "retweets": 28,
+      "replies": 15,
+      "views": 2876,
+      "images": [
+        "https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "7",
+      "content": "Excited to announce that I'll be speaking at the upcoming tech conference next month! Topic: 'Building Scalable React Applications' #techconference #reactjs",
+      "userId": "5",
+      "createdAt": "2023-07-14T08:45:00Z",
+      "likes": 89,
+      "retweets": 32,
+      "replies": 11,
+      "views": 2143
+    },
+    {
+      "id": "8",
+      "content": "Just tried the new coffee shop downtown. Their cold brew is absolutely amazing! ☕",
+      "userId": "6",
+      "createdAt": "2023-07-13T16:20:00Z",
+      "likes": 45,
+      "retweets": 8,
+      "replies": 6,
+      "views": 1234
+    },
+    {
+      "id": "9",
+      "content": "Finished my first marathon today! 26.2 miles of pure determination. So proud of this achievement! 🏃‍♂️",
+      "userId": "3",
+      "createdAt": "2023-07-13T14:10:00Z",
+      "likes": 156,
+      "retweets": 42,
+      "replies": 28,
+      "views": 3567,
+      "images": [
+        "https://images.unsplash.com/photo-1530137073521-0219663abcc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "10",
+      "content": "Just watched the latest episode of that new sci-fi show. Mind blown! No spoilers, but you all need to watch it!",
+      "userId": "1",
+      "createdAt": "2023-07-13T09:30:00Z",
+      "likes": 78,
+      "retweets": 19,
+      "replies": 23,
+      "views": 2345
+    }
+  ],
+  "trends": [
+    {
+      "id": "1",
+      "name": "#ReactJS",
+      "category": "Technology",
+      "tweetCount": 97500
+    },
+    {
+      "id": "2",
+      "name": "#TechLayoffs",
+      "category": "Business & finance",
+      "tweetCount": 52700
+    },
+    {
+      "id": "3",
+      "name": "#NewMovie",
+      "category": "Entertainment",
+      "tweetCount": 35200
+    },
+    {
+      "id": "4",
+      "name": "#WorldCup",
+      "category": "Sports",
+      "tweetCount": 128000
+    },
+    {
+      "id": "5",
+      "name": "#Election2024",
+      "category": "Politics",
+      "tweetCount": 75100
+    },
+    {
+      "id": "6",
+      "name": "#AI",
+      "category": "Technology",
+      "tweetCount": 120000
+    },
+    {
+      "id": "7",
+      "name": "#GamingNews",
+      "category": "Gaming",
+      "tweetCount": 45300
+    },
+    {
+      "id": "8",
+      "name": "#NewAlbum",
+      "category": "Music",
+      "tweetCount": 67800
+    }
+  ],
+  "follows": [
+    {
+      "id": "1",
+      "followerId": "1",
+      "followingId": "2"
+    },
+    {
+      "id": "2",
+      "followerId": "1",
+      "followingId": "3"
+    },
+    {
+      "id": "3",
+      "followerId": "2",
+      "followingId": "1"
+    },
+    {
+      "id": "4",
+      "followerId": "3",
+      "followingId": "1"
+    },
+    {
+      "id": "991b",
+      "followerId": "1",
+      "followingId": "2"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "1",
+      "userId": "1",
+      "tweetId": "3"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "tweetId": "6"
+    }
+  ]
+}
