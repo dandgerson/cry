@@ -8,7 +8,8 @@
       "bio": "Software developer | React enthusiast | Coffee lover",
       "following": 234,
       "followers": 567,
-      "joinedDate": "January 2020"
+      "joinedDate": "January 2020",
+      "isModerator": false
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "bio": "UX Designer | Travel enthusiast",
       "following": 345,
       "followers": 1234,
-      "joinedDate": "March 2019"
+      "joinedDate": "March 2019",
+      "isModerator": true
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "bio": "Product Manager | Tech enthusiast",
       "following": 567,
       "followers": 890,
-      "joinedDate": "June 2021"
+      "joinedDate": "June 2021",
+      "isModerator": false
     },
     {
       "id": "4",
@@ -38,7 +41,8 @@
       "bio": "Digital Marketer | Photography lover",
       "following": 234,
       "followers": 567,
-      "joinedDate": "April 2022"
+      "joinedDate": "April 2022",
+      "isModerator": false
     },
     {
       "id": "5",
@@ -48,7 +52,8 @@
       "bio": "Software Engineer | Gamer | Music lover",
       "following": 345,
       "followers": 789,
-      "joinedDate": "May 2021"
+      "joinedDate": "May 2021",
+      "isModerator": false
     },
     {
       "id": "6",
@@ -58,168 +63,419 @@
       "bio": "Content Creator | Travel blogger",
       "following": 456,
       "followers": 890,
-      "joinedDate": "January 2023"
+      "joinedDate": "January 2023",
+      "isModerator": false
     }
   ],
-  "tweets": [
+  "cries": [
     {
       "id": "1",
-      "content": "Just launched my new website! Check it out at example.com #webdev #react",
+      "content": "Нужна помощь с оплатой лекарств для моей бабушки. Любая сумма будет очень кстати.",
       "userId": "2",
       "createdAt": "2023-07-15T14:30:00Z",
       "likes": 45,
-      "retweets": 12,
+      "shares": 12,
       "replies": 8,
-      "views": 1234
+      "views": 1234,
+      "category": "medical",
+      "helpType": "financial",
+      "status": "approved",
+      "urgency": "medium",
+      "location": "Москва",
+      "amountNeeded": 5000,
+      "amountRaised": 2500,
+      "validatedBy": "3",
+      "validatedAt": "2023-07-15T15:30:00Z",
+      "documents": []
     },
     {
       "id": "2",
-      "content": "React 18 has some amazing new features. Loving the new concurrent rendering capabilities!",
+      "content": "Ищу волонтеров для помощи в организации благотворительного мероприятия в эти выходные. Нужно 5-6 человек на 3 часа.",
       "userId": "1",
       "createdAt": "2023-07-15T12:30:00Z",
       "likes": 89,
-      "retweets": 23,
+      "shares": 23,
       "replies": 14,
-      "views": 2345
+      "views": 2345,
+      "category": "volunteering",
+      "helpType": "practical",
+      "status": "approved",
+      "urgency": "high",
+      "location": "Санкт-Петербург",
+      "amountNeeded": 0,
+      "amountRaised": 0,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-15T13:00:00Z",
+      "documents": []
     },
     {
       "id": "3",
-      "content": "Beautiful sunset today! 🌅",
+      "content": "Собираю средства на операцию для бездомного котенка, которого нашел вчера. Ветеринар говорит, что нужна срочная помощь.",
       "userId": "3",
       "createdAt": "2023-07-15T09:30:00Z",
       "likes": 123,
-      "retweets": 34,
+      "shares": 34,
       "replies": 12,
       "views": 3456,
+      "category": "animals",
+      "helpType": "financial",
+      "status": "pending",
+      "urgency": "high",
+      "location": "Екатеринбург",
+      "amountNeeded": 8000,
+      "amountRaised": 3200,
+      "validatedBy": null,
+      "validatedAt": null,
       "images": [
         "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-      ]
+      ],
+      "documents": []
     },
     {
       "id": "4",
-      "content": "Just finished reading \"Atomic Habits\" by James Clear. Highly recommend it to everyone!",
+      "content": "Нужна эмоциональная поддержка после потери работы. Буду благодарен за советы по поиску новой позиции в IT.",
       "userId": "2",
       "createdAt": "2023-07-15T06:30:00Z",
       "likes": 67,
-      "retweets": 15,
+      "shares": 15,
       "replies": 9,
-      "views": 1876
+      "views": 1876,
+      "category": "emotional",
+      "helpType": "emotional",
+      "status": "approved",
+      "urgency": "low",
+      "location": "Онлайн",
+      "amountNeeded": 0,
+      "amountRaised": 0,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-15T07:30:00Z",
+      "documents": []
     },
     {
       "id": "5",
-      "content": "Working on a new project using TypeScript and React. The type safety is amazing!",
+      "content": "Собираю деньги на учебники для нового учебного года. Перешел в 10 класс, нужно много новых книг.",
       "userId": "1",
       "createdAt": "2023-07-14T14:30:00Z",
       "likes": 56,
-      "retweets": 14,
+      "shares": 14,
       "replies": 7,
-      "views": 1543
+      "views": 1543,
+      "category": "education",
+      "helpType": "financial",
+      "status": "approved",
+      "urgency": "medium",
+      "location": "Казань",
+      "amountNeeded": 3000,
+      "amountRaised": 1500,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-14T16:30:00Z",
+      "documents": []
     },
     {
       "id": "6",
-      "content": "Just got back from an amazing trip to Japan! The food, culture, and people were incredible. Can't wait to go back! 🇯🇵",
+      "content": "Нужна помощь с переездом в эти выходные. Есть несколько тяжелых предметов, которые не могу поднять сам.",
       "userId": "4",
       "createdAt": "2023-07-14T10:15:00Z",
       "likes": 112,
-      "retweets": 28,
+      "shares": 28,
       "replies": 15,
       "views": 2876,
+      "category": "household",
+      "helpType": "practical",
+      "status": "approved",
+      "urgency": "medium",
+      "location": "Новосибирск",
+      "amountNeeded": 0,
+      "amountRaised": 0,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-14T11:30:00Z",
       "images": [
         "https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-      ]
+      ],
+      "documents": []
     },
     {
       "id": "7",
-      "content": "Excited to announce that I'll be speaking at the upcoming tech conference next month! Topic: 'Building Scalable React Applications' #techconference #reactjs",
+      "content": "Ищу репетитора по математике для подготовки к ЕГЭ. Могу предложить обмен - я хорошо знаю английский и могу помочь с ним взамен.",
       "userId": "5",
       "createdAt": "2023-07-14T08:45:00Z",
       "likes": 89,
-      "retweets": 32,
+      "shares": 32,
       "replies": 11,
-      "views": 2143
+      "views": 2143,
+      "category": "education",
+      "helpType": "practical",
+      "status": "approved",
+      "urgency": "low",
+      "location": "Онлайн",
+      "amountNeeded": 0,
+      "amountRaised": 0,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-14T09:30:00Z",
+      "documents": []
     },
     {
       "id": "8",
-      "content": "Just tried the new coffee shop downtown. Their cold brew is absolutely amazing! ☕",
+      "content": "Нужна финансовая помощь для оплаты курсов программирования. Хочу сменить профессию, но сейчас нахожусь в сложной ситуации.",
       "userId": "6",
       "createdAt": "2023-07-13T16:20:00Z",
       "likes": 45,
-      "retweets": 8,
+      "shares": 8,
       "replies": 6,
-      "views": 1234
+      "views": 1234,
+      "category": "education",
+      "helpType": "financial",
+      "status": "rejected",
+      "urgency": "medium",
+      "location": "Краснодар",
+      "amountNeeded": 15000,
+      "amountRaised": 0,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-13T17:30:00Z",
+      "documents": [],
+      "rejectionReason": "Недостаточно информации о курсах и обосновании необходимости"
     },
     {
       "id": "9",
-      "content": "Finished my first marathon today! 26.2 miles of pure determination. So proud of this achievement! 🏃‍♂️",
+      "content": "Собираю средства на лечение после аварии. Требуется длительная реабилитация, документы прилагаю.",
       "userId": "3",
       "createdAt": "2023-07-13T14:10:00Z",
       "likes": 156,
-      "retweets": 42,
+      "shares": 42,
       "replies": 28,
       "views": 3567,
+      "category": "medical",
+      "helpType": "financial",
+      "status": "approved",
+      "urgency": "high",
+      "location": "Ростов-на-Дону",
+      "amountNeeded": 50000,
+      "amountRaised": 35000,
+      "validatedBy": "2",
+      "validatedAt": "2023-07-13T15:30:00Z",
       "images": [
         "https://images.unsplash.com/photo-1530137073521-0219663abcc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-      ]
+      ],
+      "documents": ["medical_report.pdf", "hospital_bill.pdf"]
     },
     {
       "id": "10",
-      "content": "Just watched the latest episode of that new sci-fi show. Mind blown! No spoilers, but you all need to watch it!",
+      "content": "Нужна помощь с уходом за пожилой мамой на несколько часов в неделю. Могу предложить оплату или какую-то взаимопомощь.",
       "userId": "1",
       "createdAt": "2023-07-13T09:30:00Z",
       "likes": 78,
-      "retweets": 19,
+      "shares": 19,
       "replies": 23,
-      "views": 2345
+      "views": 2345,
+      "category": "elderly",
+      "helpType": "practical",
+      "status": "pending",
+      "urgency": "medium",
+      "location": "Самара",
+      "amountNeeded": 0,
+      "amountRaised": 0,
+      "validatedBy": null,
+      "validatedAt": null,
+      "documents": []
     }
   ],
-  "trends": [
+  "categories": [
     {
       "id": "1",
-      "name": "#ReactJS",
-      "category": "Technology",
-      "tweetCount": 97500
+      "name": "medical",
+      "displayName": "Медицинская помощь",
+      "icon": "stethoscope"
     },
     {
       "id": "2",
-      "name": "#TechLayoffs",
-      "category": "Business & finance",
-      "tweetCount": 52700
+      "name": "education",
+      "displayName": "Образование",
+      "icon": "book"
     },
     {
       "id": "3",
-      "name": "#NewMovie",
-      "category": "Entertainment",
-      "tweetCount": 35200
+      "name": "household",
+      "displayName": "Бытовая помощь",
+      "icon": "home"
     },
     {
       "id": "4",
-      "name": "#WorldCup",
-      "category": "Sports",
-      "tweetCount": 128000
+      "name": "emotional",
+      "displayName": "Эмоциональная поддержка",
+      "icon": "heart"
     },
     {
       "id": "5",
-      "name": "#Election2024",
-      "category": "Politics",
-      "tweetCount": 75100
+      "name": "animals",
+      "displayName": "Помощь животным",
+      "icon": "paw"
     },
     {
       "id": "6",
-      "name": "#AI",
-      "category": "Technology",
-      "tweetCount": 120000
+      "name": "elderly",
+      "displayName": "Помощь пожилым",
+      "icon": "user"
     },
     {
       "id": "7",
-      "name": "#GamingNews",
-      "category": "Gaming",
-      "tweetCount": 45300
+      "name": "volunteering",
+      "displayName": "Волонтерство",
+      "icon": "users"
+    }
+  ],
+  "helpTypes": [
+    {
+      "id": "1",
+      "name": "financial",
+      "displayName": "Финансовая помощь"
+    },
+    {
+      "id": "2",
+      "name": "practical",
+      "displayName": "Практическая помощь"
+    },
+    {
+      "id": "3",
+      "name": "emotional",
+      "displayName": "Эмоциональная поддержка"
+    }
+  ],
+  "urgencyLevels": [
+    {
+      "id": "1",
+      "name": "low",
+      "displayName": "Низкая"
+    },
+    {
+      "id": "2",
+      "name": "medium",
+      "displayName": "Средняя"
+    },
+    {
+      "id": "3",
+      "name": "high",
+      "displayName": "Высокая"
+    }
+  ],
+  "donations": [
+    {
+      "id": "1",
+      "cryId": "1",
+      "userId": "3",
+      "amount": 500,
+      "createdAt": "2023-07-15T16:30:00Z",
+      "message": "Выздоравливайте!"
+    },
+    {
+      "id": "2",
+      "cryId": "1",
+      "userId": "4",
+      "amount": 1000,
+      "createdAt": "2023-07-15T17:30:00Z",
+      "message": "Надеюсь, это поможет"
+    },
+    {
+      "id": "3",
+      "cryId": "1",
+      "userId": "5",
+      "amount": 1000,
+      "createdAt": "2023-07-15T18:30:00Z",
+      "message": ""
+    },
+    {
+      "id": "4",
+      "cryId": "3",
+      "userId": "1",
+      "amount": 1000,
+      "createdAt": "2023-07-15T19:30:00Z",
+      "message": "На лечение котика"
+    },
+    {
+      "id": "5",
+      "cryId": "3",
+      "userId": "2",
+      "amount": 2200,
+      "createdAt": "2023-07-15T20:30:00Z",
+      "message": "Выздоравливай, котик!"
+    },
+    {
+      "id": "6",
+      "cryId": "5",
+      "userId": "3",
+      "amount": 1500,
+      "createdAt": "2023-07-15T21:30:00Z",
+      "message": "На учебники"
+    },
+    {
+      "id": "7",
+      "cryId": "9",
+      "userId": "1",
+      "amount": 10000,
+      "createdAt": "2023-07-14T10:30:00Z",
+      "message": "Поправляйтесь!"
     },
     {
       "id": "8",
-      "name": "#NewAlbum",
-      "category": "Music",
-      "tweetCount": 67800
+      "cryId": "9",
+      "userId": "2",
+      "amount": 15000,
+      "createdAt": "2023-07-14T11:30:00Z",
+      "message": "На скорейшее выздоровление"
+    },
+    {
+      "id": "9",
+      "cryId": "9",
+      "userId": "4",
+      "amount": 10000,
+      "createdAt": "2023-07-14T12:30:00Z",
+      "message": ""
+    }
+  ],
+  "responses": [
+    {
+      "id": "1",
+      "cryId": "2",
+      "userId": "3",
+      "type": "volunteer",
+      "message": "Я могу помочь в субботу с 12 до 15",
+      "createdAt": "2023-07-15T13:30:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "2",
+      "cryId": "2",
+      "userId": "4",
+      "type": "volunteer",
+      "message": "Могу быть в воскресенье весь день",
+      "createdAt": "2023-07-15T14:30:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "3",
+      "cryId": "6",
+      "userId": "5",
+      "type": "volunteer",
+      "message": "Могу помочь с переездом в субботу утром",
+      "createdAt": "2023-07-14T11:30:00Z",
+      "status": "pending"
+    },
+    {
+      "id": "4",
+      "cryId": "7",
+      "userId": "1",
+      "type": "volunteer",
+      "message": "Я могу помочь с математикой, я преподаватель",
+      "createdAt": "2023-07-14T09:30:00Z",
+      "status": "accepted"
+    },
+    {
+      "id": "5",
+      "cryId": "4",
+      "userId": "6",
+      "type": "emotional",
+      "message": "Я недавно был в похожей ситуации, давай поговорим",
+      "createdAt": "2023-07-15T07:30:00Z",
+      "status": "accepted"
     }
   ],
   "follows": [
@@ -253,12 +509,41 @@
     {
       "id": "1",
       "userId": "1",
-      "tweetId": "3"
+      "cryId": "3"
     },
     {
       "id": "2",
       "userId": "1",
-      "tweetId": "6"
+      "cryId": "6"
     }
-  ]
+  ],
+  "stats": {
+    "totalCries": 10,
+    "totalApproved": 7,
+    "totalPending": 2,
+    "totalRejected": 1,
+    "totalDonations": 9,
+    "totalAmountRaised": 42200,
+    "totalResponses": 5,
+    "topCategories": [
+      {
+        "name": "education",
+        "count": 3
+      },
+      {
+        "name": "medical",
+        "count": 2
+      }
+    ],
+    "topHelpTypes": [
+      {
+        "name": "financial",
+        "count": 5
+      },
+      {
+        "name": "practical",
+        "count": 4
+      }
+    ]
+  }
 }

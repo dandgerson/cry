@@ -1,61 +1,56 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import HomeTabs from '../components/HomeTabs';
-import TweetComposer from '../components/TweetComposer';
-import Tweet from '../components/Tweet';
+import CryComposer from '../components/CryComposer';
+import Cry from '../components/Cry';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { useGetTweetsQuery, useGetFollowingTweetsQuery, useCreateTweetMutation } from '../store/api/apiSlice';
+import { useGetCriesQuery, useGetFollowingCriesQuery } from '../store/api/apiSlice';
 import { useToast } from '../hooks/useToast';
+import { Cry as CryType } from '../types';
 
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'for-you' | 'following'>('for-you');
   const { user } = useSelector((state: RootState) => state.auth);
   const { showToast } = useToast();
   
-  // Fetch tweets based on active tab
-  const { data: forYouTweets, isLoading: isLoadingForYou } = useGetTweetsQuery();
-  const { data: followingTweets, isLoading: isLoadingFollowing } = 
-    useGetFollowingTweetsQuery(user?.id || '', { skip: !user || activeTab !== 'following' });
-  
-  const [createTweet] = useCreateTweetMutation();
-  
-  const handleTweet = async (content: string) => {
-    if (!user) return;
-    
-    try {
-      await createTweet({
-        content,
-        userId: user.id,
-      }).unwrap();
-      
-      showToast('Tweet posted successfully!', 'success');
-    } catch (error) {
-      showToast('Failed to post tweet. Please try again.', 'error');
-      console.error('Failed to post tweet:', error);
-    }
-  };
+  // Fetch cries based on active tab
+  const { data: forYouCries, isLoading: isLoadingForYou } = useGetCriesQuery();
+  const { data: followingCries, isLoading: isLoadingFollowing } = 
+    useGetFollowingCriesQuery(user?.id || '', { skip: !user || activeTab !== 'following' });
   
   const handleTabChange = (tab: 'for-you' | 'following') => {
     setActiveTab(tab);
   };
   
+  const handleHelpClick = (cry: CryType) => {
+    // This will be implemented in Step 4 when we add the donation system
+    showToast('Функция помощи будет доступна в ближайшее время', 'info');
+  };
+  
   const isLoading = activeTab === 'for-you' ? isLoadingForYou : isLoadingFollowing;
-  const tweets = activeTab === 'for-you' ? forYouTweets : followingTweets;
+  const cries = activeTab === 'for-you' ? forYouCries : followingCries;
+  
+  // Filter cries to show only approved ones for regular users
+  const filteredCries = cries?.filter(cry => 
+    cry.status === 'approved' || (user?.isModerator && cry.status !== 'approved')
+  );
   
   return (
     <>
-      <Header title="Home" />
+      <Header title="Главная" />
       <HomeTabs onTabChange={handleTabChange} />
-      <TweetComposer onTweet={handleTweet} />
+      <CryComposer />
       
       {isLoading ? (
-        <div style={{ padding: '20px', textAlign: 'center' }}>Loading tweets...</div>
-      ) : tweets && tweets.length > 0 ? (
-        tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
+        <div style={{ padding: '20px', textAlign: 'center' }}>Загрузка кличей...</div>
+      ) : filteredCries && filteredCries.length > 0 ? (
+        filteredCries.map(cry => (
+          <Cry key={cry.id} cry={cry} onHelpClick={handleHelpClick} />
+        ))
       ) : (
         <div style={{ padding: '20px', textAlign: 'center' }}>
-          {activeTab === 'following' ? 'Follow people to see their tweets!' : 'No tweets found.'}
+          {activeTab === 'following' ? 'Подпишитесь на людей, чтобы видеть их кличи!' : 'Кличей не найдено.'}
         </div>
       )}
     </>

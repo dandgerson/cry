@@ -82,182 +82,22 @@ export const apiSlice = createApi({
           : [{ type: 'Tweet', id: 'LIST' }],
     }),
     
-    // Get tweets by user ID
-    getUserTweets: builder.query<Tweet[], string>({
-      query: (userId) => `/tweets?userId=${userId}`,
-      transformResponse: async (response: TweetResponse[], _, userId) => {
-        // Fetch user data
-        const user = await fetch(`http://localhost:3001/users/${userId}`).then(res => res.json());
-        
-        // Map tweets to include user data
-        return response.map(tweet => ({
-          id: tweet.id,
-          content: tweet.content,
-          user,
-          createdAt: formatDistanceToNow(new Date(tweet.createdAt), { addSuffix: true }),
-          likes: tweet.likes,
-          retweets: tweet.retweets,
-          replies: tweet.replies,
-          views: tweet.views,
-          images: tweet.images
-        }));
-      },
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Tweet' as const, id })),
-              { type: 'Tweet', id: 'LIST' },
-            ]
-          : [{ type: 'Tweet', id: 'LIST' }],
+    // Get all categories
+    getCategories: builder.query<Category[], void>({
+      query: () => '/categories',
+      providesTags: [{ type: 'Category', id: 'LIST' }],
     }),
     
-    // Get tweets for user's feed (following)
-    getFollowingTweets: builder.query<Tweet[], string>({
-      query: (userId) => `/follows?followerId=${userId}`,
-      transformResponse: async (response: { followingId: string }[], _, userId) => {
-        // Get IDs of users being followed
-        const followingIds = response.map(follow => follow.followingId);
-        
-        // Fetch tweets from followed users
-        let tweets: TweetResponse[] = [];
-        for (const id of followingIds) {
-          const userTweets = await fetch(`http://localhost:3001/tweets?userId=${id}`).then(res => res.json());
-          tweets = [...tweets, ...userTweets];
-        }
-        
-        // Sort tweets by date
-        tweets.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        
-        // Fetch users for each tweet
-        const users = await fetch('http://localhost:3001/users').then(res => res.json());
-        
-        // Map tweets to include user data
-        return tweets.map(tweet => ({
-          id: tweet.id,
-          content: tweet.content,
-          user: users.find((user: UserResponse) => user.id === tweet.userId),
-          createdAt: formatDistanceToNow(new Date(tweet.createdAt), { addSuffix: true }),
-          likes: tweet.likes,
-          retweets: tweet.retweets,
-          replies: tweet.replies,
-          views: tweet.views,
-          images: tweet.images
-        }));
-      },
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Tweet' as const, id })),
-              { type: 'Tweet', id: 'LIST' },
-            ]
-          : [{ type: 'Tweet', id: 'LIST' }],
+    // Get all help types
+    getHelpTypes: builder.query<HelpType[], void>({
+      query: () => '/helpTypes',
+      providesTags: [{ type: 'HelpType', id: 'LIST' }],
     }),
     
-    // Get a single tweet by ID
-    getTweet: builder.query<Tweet, string>({
-      query: (id) => `/tweets/${id}`,
-      transformResponse: async (response: TweetResponse) => {
-        // Fetch user data
-        const user = await fetch(`http://localhost:3001/users/${response.userId}`).then(res => res.json());
-        
-        return {
-          id: response.id,
-          content: response.content,
-          user,
-          createdAt: formatDistanceToNow(new Date(response.createdAt), { addSuffix: true }),
-          likes: response.likes,
-          retweets: response.retweets,
-          replies: response.replies,
-          views: response.views,
-          images: response.images
-        };
-      },
-      providesTags: (_, __, id) => [{ type: 'Tweet', id }],
-    }),
-    
-    // Create a new tweet
-    createTweet: builder.mutation<Tweet, Omit<TweetResponse, 'id' | 'createdAt' | 'likes' | 'retweets' | 'replies' | 'views'>>({
-      query: (tweet) => ({
-        url: '/tweets',
-        method: 'POST',
-        body: {
-          ...tweet,
-          createdAt: new Date().toISOString(),
-          likes: 0,
-          retweets: 0,
-          replies: 0,
-          views: 0
-        },
-      }),
-      invalidatesTags: [{ type: 'Tweet', id: 'LIST' }],
-    }),
-    
-    // Like a tweet
-    likeTweet: builder.mutation<void, string>({
-      query: (id) => ({
-        url: `/tweets/${id}`,
-        method: 'PATCH',
-        body: {
-          likes: {
-            function: 'increment'
-          }
-        },
-      }),
-      // Custom queryFn to handle the increment operation
-      async queryFn(id, api, extraOptions, baseQuery) {
-        // First get the current tweet
-        const getTweetResult = await baseQuery(`/tweets/${id}`);
-        if (getTweetResult.error) return { error: getTweetResult.error };
-        
-        const tweet = getTweetResult.data as TweetResponse;
-        
-        // Then update with incremented likes
-        const updateResult = await baseQuery({
-          url: `/tweets/${id}`,
-          method: 'PATCH',
-          body: {
-            likes: tweet.likes + 1
-          }
-        });
-        
-        if (updateResult.error) return { error: updateResult.error };
-        return { data: undefined };
-      },
-      invalidatesTags: (_, __, id) => [{ type: 'Tweet', id }],
-    }),
-    
-    // Retweet a tweet
-    retweetTweet: builder.mutation<void, string>({
-      query: (id) => ({
-        url: `/tweets/${id}`,
-        method: 'PATCH',
-        body: {
-          retweets: {
-            function: 'increment'
-          }
-        },
-      }),
-      // Custom queryFn to handle the increment operation
-      async queryFn(id, api, extraOptions, baseQuery) {
-        // First get the current tweet
-        const getTweetResult = await baseQuery(`/tweets/${id}`);
-        if (getTweetResult.error) return { error: getTweetResult.error };
-        
-        const tweet = getTweetResult.data as TweetResponse;
-        
-        // Then update with incremented retweets
-        const updateResult = await baseQuery({
-          url: `/tweets/${id}`,
-          method: 'PATCH',
-          body: {
-            retweets: tweet.retweets + 1
-          }
-        });
-        
-        if (updateResult.error) return { error: updateResult.error };
-        return { data: undefined };
-      },
-      invalidatesTags: (_, __, id) => [{ type: 'Tweet', id }],
+    // Get all urgency levels
+    getUrgencyLevels: builder.query<UrgencyLevel[], void>({
+      query: () => '/urgencyLevels',
+      providesTags: [{ type: 'UrgencyLevel', id: 'LIST' }],
     }),
     
     // Get all users
@@ -333,47 +173,52 @@ export const apiSlice = createApi({
       invalidatesTags: [{ type: 'User', id: 'LIST' }],
     }),
     
-    // Get trending topics
-    getTrends: builder.query<TrendResponse[], void>({
-      query: () => '/trends',
-      providesTags: [{ type: 'Trend', id: 'LIST' }],
-    }),
-    
     // Get bookmarks for a user
-    getBookmarks: builder.query<Tweet[], string>({
+    getBookmarks: builder.query<Cry[], string>({
       query: (userId) => `/bookmarks?userId=${userId}`,
       transformResponse: async (response: BookmarkResponse[]) => {
-        // Get tweet IDs from bookmarks
-        const tweetIds = response.map(bookmark => bookmark.tweetId);
+        // Get cry IDs from bookmarks
+        const cryIds = response.map(bookmark => bookmark.cryId);
         
-        // Fetch tweets
-        let tweets: TweetResponse[] = [];
-        for (const id of tweetIds) {
-          const tweet = await fetch(`http://localhost:3001/tweets/${id}`).then(res => res.json());
-          tweets.push(tweet);
+        // Fetch cries
+        let cries: CryResponse[] = [];
+        for (const id of cryIds) {
+          const cry = await fetch(`http://localhost:3001/cries/${id}`).then(res => res.json());
+          cries.push(cry);
         }
         
-        // Fetch users for each tweet
+        // Fetch users for each cry
         const users = await fetch('http://localhost:3001/users').then(res => res.json());
         
-        // Map tweets to include user data
-        return tweets.map(tweet => ({
-          id: tweet.id,
-          content: tweet.content,
-          user: users.find((user: UserResponse) => user.id === tweet.userId),
-          createdAt: formatDistanceToNow(new Date(tweet.createdAt), { addSuffix: true }),
-          likes: tweet.likes,
-          retweets: tweet.retweets,
-          replies: tweet.replies,
-          views: tweet.views,
-          images: tweet.images
+        // Map cries to include user data
+        return cries.map(cry => ({
+          id: cry.id,
+          content: cry.content,
+          user: users.find((user: UserResponse) => user.id === cry.userId),
+          createdAt: formatDistanceToNow(new Date(cry.createdAt), { addSuffix: true }),
+          likes: cry.likes,
+          shares: cry.shares,
+          replies: cry.replies,
+          views: cry.views,
+          images: cry.images,
+          category: cry.category,
+          helpType: cry.helpType,
+          status: cry.status,
+          urgency: cry.urgency,
+          location: cry.location,
+          amountNeeded: cry.amountNeeded,
+          amountRaised: cry.amountRaised,
+          validatedBy: cry.validatedBy,
+          validatedAt: cry.validatedAt,
+          documents: cry.documents,
+          rejectionReason: cry.rejectionReason
         }));
       },
       providesTags: [{ type: 'Bookmark', id: 'LIST' }],
     }),
     
     // Add a bookmark
-    addBookmark: builder.mutation<void, { userId: string; tweetId: string }>({
+    addBookmark: builder.mutation<void, { userId: string; cryId: string }>({
       query: (bookmark) => ({
         url: '/bookmarks',
         method: 'POST',
@@ -383,15 +228,15 @@ export const apiSlice = createApi({
     }),
     
     // Remove a bookmark
-    removeBookmark: builder.mutation<void, { userId: string; tweetId: string }>({
+    removeBookmark: builder.mutation<void, { userId: string; cryId: string }>({
       query: (bookmark) => {
         // Find the bookmark record ID first
         return {
-          url: `/bookmarks?userId=${bookmark.userId}&tweetId=${bookmark.tweetId}`,
+          url: `/bookmarks?userId=${bookmark.userId}&cryId=${bookmark.cryId}`,
           method: 'GET',
         };
       },
-      async onQueryStarted({ userId, tweetId }, { dispatch, queryFulfilled }) {
+      async onQueryStarted({ userId, cryId }, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
           const bookmarkRecord = data[0];
@@ -417,25 +262,155 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: [{ type: 'Bookmark', id: 'LIST' }],
     }),
+    
+    // Create a donation
+    createDonation: builder.mutation<void, Omit<DonationResponse, 'id' | 'createdAt'>>({
+      query: (donation) => ({
+        url: '/donations',
+        method: 'POST',
+        body: {
+          ...donation,
+          createdAt: new Date().toISOString()
+        },
+      }),
+      async onQueryStarted({ cryId, amount }, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          
+          // Update the cry's amountRaised
+          const getCryResult = await dispatch(
+            apiSlice.endpoints.getCry.initiate(cryId)
+          ).unwrap();
+          
+          await dispatch(
+            apiSlice.endpoints.updateCryAmount.initiate({
+              id: cryId,
+              amountRaised: getCryResult.amountRaised + amount
+            })
+          );
+        } catch (err) {
+          console.error('Error updating cry amount after donation:', err);
+        }
+      },
+      invalidatesTags: [{ type: 'Donation', id: 'LIST' }, { type: 'Stats', id: 'LIST' }],
+    }),
+    
+    // Update cry amount raised
+    updateCryAmount: builder.mutation<void, { id: string, amountRaised: number }>({
+      query: ({ id, amountRaised }) => ({
+        url: `/cries/${id}`,
+        method: 'PATCH',
+        body: {
+          amountRaised
+        },
+      }),
+      invalidatesTags: (_, __, { id }) => [{ type: 'Cry', id }],
+    }),
+    
+    // Get donations for a cry
+    getDonationsForCry: builder.query<Donation[], string>({
+      query: (cryId) => `/donations?cryId=${cryId}`,
+      transformResponse: async (response: DonationResponse[]) => {
+        // Fetch users for each donation
+        const users = await fetch('http://localhost:3001/users').then(res => res.json());
+        
+        // Map donations to include user data
+        return response.map(donation => ({
+          ...donation,
+          user: users.find((user: UserResponse) => user.id === donation.userId)
+        }));
+      },
+      providesTags: [{ type: 'Donation', id: 'LIST' }],
+    }),
+    
+    // Create a response (volunteer or emotional)
+    createResponse: builder.mutation<void, Omit<ResponseResponse, 'id' | 'createdAt' | 'status'>>({
+      query: (response) => ({
+        url: '/responses',
+        method: 'POST',
+        body: {
+          ...response,
+          createdAt: new Date().toISOString(),
+          status: 'pending'
+        },
+      }),
+      invalidatesTags: [{ type: 'Response', id: 'LIST' }, { type: 'Stats', id: 'LIST' }],
+    }),
+    
+    // Update response status
+    updateResponseStatus: builder.mutation<void, { id: string, status: 'accepted' | 'rejected' }>({
+      query: ({ id, status }) => ({
+        url: `/responses/${id}`,
+        method: 'PATCH',
+        body: {
+          status
+        },
+      }),
+      invalidatesTags: (_, __, { id }) => [{ type: 'Response', id }],
+    }),
+    
+    // Get responses for a cry
+    getResponsesForCry: builder.query<Response[], string>({
+      query: (cryId) => `/responses?cryId=${cryId}`,
+      transformResponse: async (response: ResponseResponse[]) => {
+        // Fetch users for each response
+        const users = await fetch('http://localhost:3001/users').then(res => res.json());
+        
+        // Map responses to include user data
+        return response.map(resp => ({
+          ...resp,
+          user: users.find((user: UserResponse) => user.id === resp.userId)
+        }));
+      },
+      providesTags: [{ type: 'Response', id: 'LIST' }],
+    }),
+    
+    // Get stats
+    getStats: builder.query<Stats, void>({
+      query: () => '/stats',
+      providesTags: [{ type: 'Stats', id: 'LIST' }],
+    }),
   }),
 });
 
 // Export hooks for usage in components
 export const {
-  useGetTweetsQuery,
-  useGetUserTweetsQuery,
-  useGetFollowingTweetsQuery,
-  useGetTweetQuery,
-  useCreateTweetMutation,
-  useLikeTweetMutation,
-  useRetweetTweetMutation,
+  useGetCriesQuery,
+  useGetUserCriesQuery,
+  useGetFollowingCriesQuery,
+  useGetCriesByCategoryQuery,
+  useGetCriesByHelpTypeQuery,
+  useGetCriesByUrgencyQuery,
+  useGetCriesByStatusQuery,
+  useGetCryQuery,
+  useCreateCryMutation,
+  useUpdateCryStatusMutation,
+  useLikeCryMutation,
+  useShareCryMutation,
+  useGetCategoriesQuery,
+  useGetHelpTypesQuery,
+  useGetUrgencyLevelsQuery,
   useGetUsersQuery,
   useGetUserQuery,
   useGetSuggestedUsersQuery,
   useFollowUserMutation,
   useUnfollowUserMutation,
-  useGetTrendsQuery,
   useGetBookmarksQuery,
   useAddBookmarkMutation,
   useRemoveBookmarkMutation,
+  useCreateDonationMutation,
+  useGetDonationsForCryQuery,
+  useCreateResponseMutation,
+  useUpdateResponseStatusMutation,
+  useGetResponsesForCryQuery,
+  useGetStatsQuery,
+  
+  // Legacy hooks for backward compatibility
+  // useGetTweetsQuery: useGetCriesQuery,
+  // useGetUserTweetsQuery: useGetUserCriesQuery,
+  // useGetFollowingTweetsQuery: useGetFollowingCriesQuery,
+  // useGetTweetQuery: useGetCryQuery,
+  // useCreateTweetMutation: useCreateCryMutation,
+  // useLikeTweetMutation: useLikeCryMutation,
+  // useRetweetTweetMutation: useShareCryMutation,
 } = apiSlice;

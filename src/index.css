@@ -20,6 +20,22 @@
   --profile-button-border: #cfd9de;
   --profile-button-hover: #e7e7e8;
   --header-background: rgba(255, 255, 255, 0.85);
+  
+  /* Cry platform specific variables */
+  --category-tag-bg: #e8f5fd;
+  --help-type-tag-bg: #e8f5fd;
+  --urgency-high-bg: #fee2e2;
+  --urgency-high-text: #b91c1c;
+  --urgency-medium-bg: #fef3c7;
+  --urgency-medium-text: #92400e;
+  --urgency-low-bg: #d1fae5;
+  --urgency-low-text: #065f46;
+  --status-approved-bg: #d1fae5;
+  --status-approved-text: #065f46;
+  --status-pending-bg: #fef3c7;
+  --status-pending-text: #92400e;
+  --status-rejected-bg: #fee2e2;
+  --status-rejected-text: #b91c1c;
 }
 
 .dark-theme {
@@ -40,6 +56,22 @@
   --profile-button-border: #536471;
   --profile-button-hover: rgba(239, 243, 244, 0.1);
   --header-background: rgba(21, 32, 43, 0.85);
+  
+  /* Cry platform specific variables */
+  --category-tag-bg: rgba(29, 155, 240, 0.1);
+  --help-type-tag-bg: rgba(29, 155, 240, 0.1);
+  --urgency-high-bg: rgba(220, 38, 38, 0.1);
+  --urgency-high-text: #ef4444;
+  --urgency-medium-bg: rgba(245, 158, 11, 0.1);
+  --urgency-medium-text: #f59e0b;
+  --urgency-low-bg: rgba(16, 185, 129, 0.1);
+  --urgency-low-text: #10b981;
+  --status-approved-bg: rgba(16, 185, 129, 0.1);
+  --status-approved-text: #10b981;
+  --status-pending-bg: rgba(245, 158, 11, 0.1);
+  --status-pending-text: #f59e0b;
+  --status-rejected-bg: rgba(220, 38, 38, 0.1);
+  --status-rejected-text: #ef4444;
 }
 
 body {
