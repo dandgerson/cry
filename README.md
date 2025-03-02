@@ -31,8 +31,8 @@ To set up the project locally, follow these steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/cry-klic.git
-   cd cry-klic
+   git clone https://github.com/dandgerson/cry.git
+   cd cry
    ```
 
 2. **Install Dependencies**:
