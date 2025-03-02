@@ -1,139 +1,105 @@
-# Клич / Cry
-
-app aims to help people who need
-
-## Миссия
-
-[не позволить Миру иметь возможность оставаться в стороне][1]
-
-## Главная цель
-
-Дать людям удобную возможность помогать друг другу в условиях современной
-информационной среды; обеспечить [свободный], [доступный], 
-[правдивый] и [очевидный] инструмент взаимопомощи.
-
-**[свободность]** - значит без платы, безвозмездно, безпрепятственно, 
-всем
-
-**[доступность]** - значит можно пользоваться с любого устройства, всегда
-
-**[правдивость]** - значит у пользователей нет сомнений в искренности людей, которым требуется
-помощь
-
-**[очевидность]** - значит однозначный и интуитивный интерфейс, простой и
-понятный, лёгкий способ помочь людям (в один клик/касание)
-
-## Реализация
-
-Разработка мобильного/браузерного приложения, в котором [пользователи]
-могут:
-
-* [добавлять] свой [Клич] о помощи (размещать пост).
-* просматривать кличи и отзываться на них.
-
-Например, сделать фиксированный перевод денежных средств, кликнув на иконку в виде сердечка (like), размещённом под
-описанием клича. Также предусмотрены и другие способы отозваться.
-
-* делиться кличами других на своей ленте (repost)
-* сохранять в избранном
-* делиться прямой ссылкой (share)
-
-(Перед тем как клич будет доступен другим пользователям, он должен пройти процедуру валидации, 
-статус, которой отображается на кличе и виден пользователю)
-
-* Клич обладает следующими статусами
-  + Создание:
-    на этапе создания пользователь описывает свой клич. Прилагает материалы,
-    у Клича есть:
-
-        - краткая сводка дающая общее представление о Кличе.
-        - и полная информация. Детальное описание для полного представления
-  + валидация:
-      - этап проверки истинности клича и соответствия его необходимым требованиям.
-      - процесс валидации можно оптимизировать подключив исскуственный интелект
-      - но также требуется и группа валидации, которая вручном режиме будет производить этот процесс
-      (по мере обучении ИИ нагрузка на группу валидации должна уменьшаться, требуя её участия лишь в особых случаях)
-
-  + ожидание публикаций:
-      - после валидации Пользователь у пользователя появляется возможность опубликовать клич
-  + опубликован:
-      - Опубликованный клич становится доступным для просмотра остальным пользователям
-  + завершён:
-        - состояние Завершённый клич приобретает когда выполненны основные условия
-
-* просматривать открытую статистику кличей и пользователей
-* просмотреть подробную информацию о кличе кликнув по его области
-  + прочитать полное описание клича, 
-  + получить полную доступную информацию об авторе клича, 
-  + посмотреть галлерею всех представленных фотографий.
-  + сделать фиксированный перевод
-  + сделать настраиваемый перевод
-* просмотреть профиль другого пользователя
-* подписаться на другого пользователя (follow)
-
-Пользователь может компоновать статистику в форме отчётов, расшаривать
-их в социальные сети, печать
+Below is a well-structured **README.md** designed to attract the attention and participation of developers for the "Cry / Клич" project. This README clearly communicates the project's mission, technical details, and contribution guidelines, making it easy for developers to understand the project and get involved.
 
 ---
 
-Открытую статистику пользователй может просматривать любой человек.
+# Cry / Клич
 
-т.е. любой пользователь может просмотреть самого отзывчивого
-пользователя и самого нуждающегося, у кого наименьшее количество отзывов
-на кличи.
+**A mutual aid platform where users can post requests for help ("кличи") and receive support from the community.**
+
+Our mission is to create a transparent and trustworthy platform that makes it easy for people to help each other in times of need. Whether it's financial assistance, volunteering, or emotional support, "Cry / Клич" connects those who need help with those who are willing to give it.
 
 ---
 
-## Description
+## Features
 
-* это приложение -- соц сетка типа твиттера
-* с аналогичным функционалом
-* каждый пост это публичный клич о помощи от человека (от семьи)
-* каждый пользователь может оставлять "кличи" или откликаться на "кличи"
-* на клич можно отзываться лайком, репостом, добавлять себе в избранное и т.д. всё то же, что можно делать и в твиттере
-* лайк -- это моментальный перевод фиксированной суммы денежных средств. которую пользователь самостоятельно регулирует; Это может быть 10 рублей или 100.
-* кличи можно фильтровать по категориям. Например пользователь выполняя свой утренний ритуал может взять с тобой телефон и за 5 минут откликнуться на 20 кличей в категории "Лечение Детей"
+- **Post and Respond to "Кличи"**: Users can create requests for help (кличи) and receive support from the community.
+- **Validation System**: A hybrid system (AI + human moderation) ensures that all requests are genuine and trustworthy.
+- **Micro-Donations and Volunteering**: Support others with small financial contributions or by offering your time and skills.
+- **Transparent Statistics**: Open data on donations, volunteering, and platform activity to build trust and encourage participation.
+- **User-Friendly Interface**: Easy-to-use design with filtering and categorization to find relevant requests quickly.
 
-* принципиальная идея и фокус на том, чтобы дать человеку возможность легко и доступно проявлять свою человечность
+---
 
-* сделать отклики на кличи не разовый актом, преодолевающим недоверие и погружение в боль близкого, НО регулярным ритуалом, Каждый день совершать - выполнять своё общее человеческое долженствование -- свою Дхарму
+## Tech Stack
 
-моя цель используя мои навыки разработки, -- дать людям инструмент для помощи друг другу. Помочь людям помогать друг другу.
+- **Frontend**: React, Redux, Styled Components, Radix UI
+- **Backend**: JSON Server (to be replaced with a robust database like PostgreSQL)
+- **Additional Libraries**: Lucide React, Date FNS, React Router DOM
 
-Буду рад, если ты найдёшь немного времени рассказать о своих впечатлениях это возможно сдвинет меня с застоя...
-мне удалось попасть в сбер в мск. Там есть внутренний акселератор sberUp Хотел участвовать в нём с этим проектом, там есть курс по прохождению которого нужно заполнить заявку для участия, . А так как ориентировка стартапов на заработке денег, и нужно было придумывать бизнес модель...
+---
 
-В общем я не смог порочить и осквернять мои благородные идеалы "Этики всеизвестности в условиях новой информационной среды" Когда у человека нет морального права не знать о беде своего брата, не слышать Клич и молчать
+## Getting Started
 
-Например в этом приложении можно было бы создать "клич" на проведение исследований проб "пыли", осадков почвы.
+To set up the project locally, follow these steps:
 
-и если скажем 1000 пользователей-подписчиков, просто лайкнут-отозавшись на клич с фиксированным переводом в 100 рублей. сразу после просмотра эфира.
+1. **Clone the Repository**:
 
-Можно было бы собрать 100 000 рублей за один вечер.
+   ```bash
+   git clone https://github.com/yourusername/cry-klic.git
+   cd cry-klic
+   ```
 
-И их отклики на этот клич -- никуда не пропадут. Их активность останется доступной для них и их подписчиков друзей. Пользователь может управлять этой информацией давая возможность своим подписчикам следить за своими откликами и своими Кличами.
+2. **Install Dependencies**:
 
-Составлять представление о самых Откликаемых категориях кличей. Самых отзывчивых пользователях.
+   ```bash
+   npm install
+   ```
 
-Например можно будет выбрать самых отзывчивых пользователей по определённой категории Кличей
+3. **Start the Development Server**:
 
-Формировать своего рода репутацию и общественную активность -- отзывчивость.
-тема со статистикой кличей и открытого доступа к ней довольно сложная. Очень много нюансов и перекликов с "социальным рейтингом".
+   ```bash
+   npm run dev
+   ```
 
-И вообще завязка на деньги -- я считаю как необходимое зло. Деньги -- это инструмент манипуляций, шантажа. Деньги разобщают, разъединяют, стравливают; . Из безкорыстно-человеческих-совестливых отношений делают отношения потребительские -- товарно-денежные, безсовестные лживые, корыстные.
+4. **Start the JSON Server** (mock backend):
+   ```bash
+   npm run server
+   ```
 
-Я же хочу обернуть их оружие против них самих, заставив деньги быть выражением человечности и совестливости. Инструментом участливости -- отзывчивости. Возможности исполнить своё долженствование. Это даст возможность быть человеку счастливым
+Once both servers are running, you can access the app at `http://localhost:5173` and the mock API at `http://localhost:3001`.
 
-потому что невозможно быть счастливым оставив без ответа клич своего брата - человека --- такого же как ты, который невозможно не услышать находясь в новой информационной всеобъемлющей среде, в которой нет права на неинформированность. Это одно из ограничений новой информационной среды -- ноосферы. И наша задача его преодолеть, Дать людям инструмент, с помощью которого они могли бы быть счастливыми имея возможность выполнять своё долженствование -- отзываться на Клич; 
+---
 
-## Contribution
+## Contributing
 
-Для проекта нужно участие в команде:
-  + разраб на бэк
-  + разраб на фронт
-  + дизайнер для разработки "айдентики" (эмблемы, лого, основные цвета)
-  + UI/UX
-  + Научный руководитель для разработки научно исследовательской работы на тему `"Эволюция Человека новой этики "Всеизвестности" в условиях новой информационной среды (ноосферы)"`
-  + Любой посильный искренний вклад энтузиастов, единомышленников и соратников
+We welcome contributions from developers who are passionate about making a positive impact! Here's how you can help:
 
-[1]: ./documentation/motivation.md
+- **Submit Issues**: Report bugs or suggest new features via GitHub Issues.
+- **Pull Requests**: Fork the repository, make your changes, and submit a pull request. Please follow our coding standards (see `CONTRIBUTING.md`).
+- **Areas for Contribution**:
+  - Implementing the validation system (AI integration, moderator tools).
+  - Integrating a secure payment gateway for micro-donations.
+  - Scaling the backend to support a larger user base.
+  - Enhancing the UI/UX for better accessibility and user engagement.
+
+For more details, check out our [Contributing Guidelines](CONTRIBUTING.md).
+
+---
+
+## Roadmap
+
+We have exciting plans for the future of "Cry / Клич":
+
+- **Validation System**: Develop a robust system combining AI and human moderation to ensure trust.
+- **Payment Integration**: Enable secure micro-donations via Stripe or PayPal.
+- **Scalability**: Replace JSON Server with a scalable database (e.g., PostgreSQL) and deploy on a cloud platform.
+- **Community Features**: Add badges, leaderboards, and social sharing to foster a supportive community.
+- **Global Expansion**: Adapt the platform for international use, considering cultural and regional needs.
+
+Stay tuned for updates, and feel free to contribute to these goals!
+
+---
+
+## License
+
+The Cry is open-source under the [MIT License](LICENSE). Feel free to use, modify, and share it!
+
+## Contributing
+
+Want to help build The Cry? Check out our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get involved.
+
+## Why Contribute?
+
+By contributing to "Cry / Клич," you're not just building a platform—you're helping to create a world where mutual aid is accessible, transparent, and impactful. Whether you're a frontend developer, backend engineer, or designer, your skills can make a real difference in people's lives.
+
+Join us in shaping the future of digital altruism!
