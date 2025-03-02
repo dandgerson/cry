@@ -1,7 +1,3 @@
-Below is a well-structured **README.md** designed to attract the attention and participation of developers for the "Cry / Клич" project. This README clearly communicates the project's mission, technical details, and contribution guidelines, making it easy for developers to understand the project and get involved.
-
----
-
 # Cry / Клич
 
 **A mutual aid platform where users can post requests for help ("кличи") and receive support from the community.**
