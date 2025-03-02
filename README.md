@@ -82,6 +82,8 @@ We have exciting plans for the future of "Cry / Клич":
 - **Community Features**: Add badges, leaderboards, and social sharing to foster a supportive community.
 - **Global Expansion**: Adapt the platform for international use, considering cultural and regional needs.
 
+Check out our [ROADMAP.md](ROADMAP.md) for details.
+
 Stay tuned for updates, and feel free to contribute to these goals!
 
 ---
